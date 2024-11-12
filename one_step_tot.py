@@ -9,6 +9,7 @@ from openai import OpenAI
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+
 def read_csv(file_path):
     puzzles = []
     with open(file_path, mode='r') as file:
@@ -40,6 +41,7 @@ def generate_prompt(puzzle):
     )
     return prompt
 
+
 def prompt_gpt(puzzle, backend, temperature):
     prompt = generate_prompt(puzzle)
     response = client.chat.completions.create(
@@ -49,9 +51,11 @@ def prompt_gpt(puzzle, backend, temperature):
     )
     return response.choices[0].message.content
 
+
 def generate_log_filename(args):
     filename = f"./logs/{args.task}_{args.backend}_{args.temperature}_{args.test_mode}.json"
     return filename
+
 
 def run(args):
     # Choose dataset path based on test_mode
@@ -65,7 +69,7 @@ def run(args):
         response = prompt_gpt(puzzle_text, args.backend, args.temperature)
         # Log the model's response
         log_entry = {
-            "original_puzzle": puzzle, # Record the question
+            "original_puzzle": puzzle,  # Record the question
             "response": response
         }
         log.append(log_entry)
@@ -75,6 +79,7 @@ def run(args):
     log_filename = generate_log_filename(args)
     with open(log_filename, 'w') as f:
         json.dump(log, f, indent=4)
+
 
 def parse_args():
     args = argparse.ArgumentParser()
@@ -86,6 +91,7 @@ def parse_args():
     args.add_argument('--test_mode', action='store_true',
                       help="Use test dataset if set", default=True)
     return args.parse_args()
+
 
 if __name__ == '__main__':
     args = parse_args()
