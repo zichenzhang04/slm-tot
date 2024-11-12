@@ -59,17 +59,17 @@ def run(args):
     puzzles = read_csv(dataset_path)
     log = []
 
+    # Solve every puzzle in the dataset
     for puzzle in puzzles:
         puzzle_text = puzzle['Puzzles']
         response = prompt_gpt(puzzle_text, args.backend, args.temperature)
-
+        # Log the model's response
         log_entry = {
-            "original_puzzle": puzzle,
+            "original_puzzle": puzzle, # Record the question
             "response": response
         }
         log.append(log_entry)
 
-    # Ensure the logs directory exists
     os.makedirs('./logs', exist_ok=True)
     # Generate and save the log file
     log_filename = generate_log_filename(args)
