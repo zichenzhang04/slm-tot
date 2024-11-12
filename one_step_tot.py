@@ -1,79 +1,92 @@
-"""Original Code in ToT Repo https://github.com/princeton-nlp/tree-of-thought-llm"""
 import os
 import json
 import argparse
+import csv
+from dotenv import load_dotenv
+from openai import OpenAI
 
-from tot.tasks import get_task
-from tot.methods.bfs import solve, naive_solve
-from tot.models import gpt_usage
+# Load the API key from .env file
+load_dotenv()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+def read_csv(file_path):
+    puzzles = []
+    with open(file_path, mode='r') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            puzzles.append(row)
+    return puzzles
+
+
+# TODO: work on prompting, make it better
+def generate_prompt(puzzle):
+    """One Step Tree-of-Thoughts prompting."""
+    in_context_demo = (
+        "Example:\n"
+        "Puzzle: 2 2 5 10\n"
+        "Step 1: Start by considering possible operations for each pair of numbers.\n"
+        "Step 2: Try a path like (2 + 2) * 5 - 10, see if it reaches the goal 24. If not, backtrack and attempt another.\n"
+        "Step 3: Branch out to try different orders of operations and combinations, evaluating each outcome.\n"
+        "Step 4: If one path doesn't lead to a solution, backtrack and try alternative operations.\n"
+        "Eventually, find that (2 + 5) * 2 + 10 = 24. Output the correct answer.\n\n"
+    )
+
+    prompt = (
+        f"{in_context_demo}"
+        f"Now, solve the following puzzle:\n{puzzle}\n"
+        "Use a similar reasoning approach, exploring different thought branches and evaluating all possibilities. "
+        "If one path proves unworkable, backtrack to an earlier thought and attempt a different approach. "
+        "Please explain each thought process step-by-step, and output all relevant steps and conclusions."
+    )
+    return prompt
+
+def prompt_gpt(puzzle, backend, temperature):
+    prompt = generate_prompt(puzzle)
+    response = client.chat.completions.create(
+        model=backend,
+        messages=[{"role": "user", "content": prompt}],
+        temperature=temperature
+    )
+    return response.choices[0].message.content
+
+def generate_log_filename(args):
+    filename = f"./logs/{args.backend}_{args.temperature}_{args.task}.json"
+    return filename
 
 def run(args):
-    task = get_task(args.task)
-    logs, cnt_avg, cnt_any = [], 0, 0
-    if args.naive_run:
-        file = f'./logs/{args.task}/{args.backend}_{args.temperature}_naive_{args.prompt_sample}_sample_{args.n_generate_sample}_start{args.task_start_index}_end{args.task_end_index}.json'
-    else:
-        file = f'./logs/{args.task}/{args.backend}_{args.temperature}_{args.method_generate}{args.n_generate_sample}_{args.method_evaluate}{args.n_evaluate_sample}_{args.method_select}{args.n_select_sample}_start{args.task_start_index}_end{args.task_end_index}.json'
-    os.makedirs(os.path.dirname(file), exist_ok=True)
+    # Choose dataset path based on test_mode
+    dataset_path = './datasets/24_test.csv' if args.test_mode else './datasets/24.csv'
+    puzzles = read_csv(dataset_path)
+    log = []
 
-    for i in range(args.task_start_index, args.task_end_index):
-        # solve
-        if args.naive_run:
-            ys, info = naive_solve(args, task, i)
-        else:
-            ys, info = solve(args, task, i)
+    for puzzle in puzzles:
+        puzzle_text = puzzle['Puzzles']
+        response = prompt_gpt(puzzle_text, args.backend, args.temperature)
 
-        # log
-        infos = [task.test_output(i, y) for y in ys]
-        info.update({'idx': i, 'ys': ys, 'infos': infos,
-                    'usage_so_far': gpt_usage(args.backend)})
-        logs.append(info)
-        with open(file, 'w') as f:
-            json.dump(logs, f, indent=4)
+        log_entry = {
+            "original_puzzle": puzzle,
+            "response": response
+        }
+        log.append(log_entry)
 
-        # log main metric
-        accs = [info['r'] for info in infos]
-        cnt_avg += sum(accs) / len(accs)
-        cnt_any += any(accs)
-        print(i, 'sum(accs)', sum(accs), 'cnt_avg',
-              cnt_avg, 'cnt_any', cnt_any, '\n')
-
-    n = args.task_end_index - args.task_start_index
-    print(cnt_avg / n, cnt_any / n)
-    print('usage_so_far', gpt_usage(args.backend))
-
+    # Ensure the logs directory exists
+    os.makedirs('./logs', exist_ok=True)
+    # Generate and save the log file
+    log_filename = generate_log_filename(args)
+    with open(log_filename, 'w') as f:
+        json.dump(log, f, indent=4)
 
 def parse_args():
     args = argparse.ArgumentParser()
     args.add_argument('--backend', type=str,
-                      choices=['gpt-4', 'gpt-3.5-turbo'], default='gpt-4')
+                      choices=['gpt-4o', 'gpt-4o-mini'], default='gpt-4o-mini')
     args.add_argument('--temperature', type=float, default=0.7)
-
-    args.add_argument('--task', type=str, required=True,
-                      choices=['game24', 'text', 'crosswords'])
-    args.add_argument('--task_start_index', type=int, default=900)
-    args.add_argument('--task_end_index', type=int, default=1000)
-
-    args.add_argument('--naive_run', action='store_true')
-    # only used when method_generate = sample, or naive_run
-    args.add_argument('--prompt_sample', type=str, choices=['standard', 'cot'])
-
-    args.add_argument('--method_generate', type=str,
-                      choices=['sample', 'propose'])
-    args.add_argument('--method_evaluate', type=str, choices=['value', 'vote'])
-    args.add_argument('--method_select', type=str,
-                      choices=['sample', 'greedy'], default='greedy')
-    # only thing needed if naive_run
-    args.add_argument('--n_generate_sample', type=int, default=1)
-    args.add_argument('--n_evaluate_sample', type=int, default=1)
-    args.add_argument('--n_select_sample', type=int, default=1)
-
-    args = args.parse_args()
-    return args
-
+    args.add_argument('--task', type=str,
+                      choices=['game24', 'text', 'crosswords'], default="game24")
+    args.add_argument('--test_mode', action='store_true',
+                      help="Use test dataset if set", default=True)
+    return args.parse_args()
 
 if __name__ == '__main__':
     args = parse_args()
-    print(args)
     run(args)
