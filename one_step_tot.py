@@ -50,7 +50,7 @@ def prompt_gpt(puzzle, backend, temperature):
     return response.choices[0].message.content
 
 def generate_log_filename(args):
-    filename = f"./logs/{args.backend}_{args.temperature}_{args.task}.json"
+    filename = f"./logs/{args.task}_{args.backend}_{args.temperature}_{args.test_mode}.json"
     return filename
 
 def run(args):
