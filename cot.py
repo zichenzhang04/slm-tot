@@ -4,6 +4,7 @@ import argparse
 import csv
 from dotenv import load_dotenv
 from openai import OpenAI
+import time
 
 # Load the API key from .env file
 load_dotenv()
@@ -55,7 +56,7 @@ def generate_prompt(puzzle):
         Answer: ((5 + 5) + 5) + 9 = 24
         Input: {puzzle}
         '''
-    print(cot_prompt)
+    # print(cot_prompt)
     return cot_prompt
 
 
@@ -81,8 +82,13 @@ def run(args):
     log = []
 
     # Solve every puzzle in the dataset
-    for puzzle in puzzles:
+    count = 0
+    start_time = time.time()
+    print("Current Time:", start_time)
+    for puzzle in puzzles[901:1001]:
+
         puzzle_text = puzzle['Puzzles']
+        print(count)
         response = prompt_gpt(puzzle_text, args.backend, args.temperature)
         # Log the model's response
         log_entry = {
@@ -90,6 +96,11 @@ def run(args):
             "response": response
         }
         log.append(log_entry)
+        count += 1
+    finish_time = time.time()
+    print("Finish time:", finish_time)
+    print("Time taken:", finish_time - start_time)
+    
 
     os.makedirs('./logs', exist_ok=True)
     # Generate and save the log file
@@ -101,7 +112,7 @@ def run(args):
 def parse_args():
     args = argparse.ArgumentParser()
     args.add_argument('--backend', type=str,
-                      choices=['gpt-4o', 'gpt-4o-mini'], default='gpt-4o')
+                      choices=['gpt-4o', 'gpt-4o-mini'], default='gpt-4')
     args.add_argument('--temperature', type=float, default=0.7)
     args.add_argument('--task', type=str,
                       choices=['game24', 'text', 'crosswords'], default="game24")

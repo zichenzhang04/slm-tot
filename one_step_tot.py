@@ -89,7 +89,7 @@ def parse_args():
     args.add_argument('--task', type=str,
                       choices=['game24', 'text', 'crosswords'], default="game24")
     args.add_argument('--test_mode', action='store_true',
-                      help="Use test dataset if set", default=True)
+                      help="Use test dataset if set", default=False)
     return args.parse_args()
 
 
