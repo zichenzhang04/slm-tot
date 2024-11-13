@@ -21,25 +21,42 @@ def read_csv(file_path):
 
 # TODO: work on prompting, make it better
 def generate_prompt(puzzle):
-    """One Step Tree-of-Thoughts prompting."""
-    in_context_demo = (
-        "Example:\n"
-        "Puzzle: 2 2 5 10\n"
-        "Step 1: Start by considering possible operations for each pair of numbers.\n"
-        "Step 2: Try a path like (2 + 2) * 5 - 10, see if it reaches the goal 24. If not, backtrack and attempt another.\n"
-        "Step 3: Branch out to try different orders of operations and combinations, evaluating each outcome.\n"
-        "Step 4: If one path doesn't lead to a solution, backtrack and try alternative operations.\n"
-        "Eventually, find that (2 + 5) * 2 + 10 = 24. Output the correct answer.\n\n"
-    )
-
-    prompt = (
-        f"{in_context_demo}"
-        f"Now, solve the following puzzle:\n{puzzle}\n"
-        "Use a similar reasoning approach, exploring different thought branches and evaluating all possibilities. "
-        "If one path proves unworkable, backtrack to an earlier thought and attempt a different approach. "
-        "Please explain each thought process step-by-step, and output all relevant steps and conclusions."
-    )
-    return prompt
+    
+    cot_prompt = f'''Use numbers and basic arithmetic operations (+ - * /) to obtain 24. Each step, you are only allowed to choose two of the remaining numbers to obtain a new number.
+        Input: 4 4 6 8
+        Steps:
+        4 + 8 = 12 (left: 4 6 12)
+        6 - 4 = 2 (left: 2 12)
+        2 * 12 = 24 (left: 24)
+        Answer: (6 - 4) * (4 + 8) = 24
+        Input: 2 9 10 12
+        Steps:
+        12 * 2 = 24 (left: 9 10 24)
+        10 - 9 = 1 (left: 1 24)
+        24 * 1 = 24 (left: 24)
+        Answer: (12 * 2) * (10 - 9) = 24
+        Input: 4 9 10 13
+        Steps:
+        13 - 10 = 3 (left: 3 4 9)
+        9 - 3 = 6 (left: 4 6)
+        4 * 6 = 24 (left: 24)
+        Answer: 4 * (9 - (13 - 10)) = 24
+        Input: 1 4 8 8
+        Steps:
+        8 / 4 = 2 (left: 1 2 8)
+        1 + 2 = 3 (left: 3 8)
+        3 * 8 = 24 (left: 24)
+        Answer: (1 + 8 / 4) * 8 = 24
+        Input: 5 5 5 9
+        Steps:
+        5 + 5 = 10 (left: 5 9 10)
+        10 + 5 = 15 (left: 9 15)
+        15 + 9 = 24 (left: 24)
+        Answer: ((5 + 5) + 5) + 9 = 24
+        Input: {puzzle}
+        '''
+    print(cot_prompt)
+    return cot_prompt
 
 
 def prompt_gpt(puzzle, backend, temperature):
