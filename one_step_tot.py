@@ -24,20 +24,21 @@ def generate_prompt(puzzle):
     """One Step Tree-of-Thoughts prompting."""
     in_context_demo = (
         "Example:\n"
-        "Puzzle: 2 2 5 10\n"
+        "Puzzle: 5 10 4 6\n"
         "Step 1: Start by considering possible operations for each pair of numbers.\n"
-        "Step 2: Try a path like (2 + 2) * 5 - 10, see if it reaches the goal 24. If not, backtrack and attempt another.\n"
+        "Step 2: Try a path (a pair of two numbers) like 5 + 10 = 15, see if the remaining numbers 15 4 6 can possibly reach the goal 24. If not, backtrack and attempt another.\n"
         "Step 3: Branch out to try different orders of operations and combinations, evaluating each outcome.\n"
         "Step 4: If one path doesn't lead to a solution, backtrack and try alternative operations.\n"
-        "Eventually, find that (2 + 5) * 2 + 10 = 24. Output the correct answer.\n\n"
+        "After reaching the result 24, only output the following exactly in the same format:\n"
+        "10 - 4 = 6 (left: 5 6 6)\n"
+        "5 * 6 = 30 (left: 6 30)\n"
+        "30 - 6 = 24 (left: 24)\n"
+        "Answer: (5 * (10 - 4)) - 6 = 24\n\n"
     )
 
     prompt = (
         f"{in_context_demo}"
         f"Now, solve the following puzzle:\n{puzzle}\n"
-        "Use a similar reasoning approach, exploring different thought branches and evaluating all possibilities. "
-        "If one path proves unworkable, backtrack to an earlier thought and attempt a different approach. "
-        "Please explain each thought process step-by-step, and output all relevant steps and conclusions."
     )
     return prompt
 
