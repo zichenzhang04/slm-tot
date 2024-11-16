@@ -67,7 +67,7 @@ def generate_prompt(puzzle):
         f"{system_prompt}"
         f"{in_context_demo}"
         f"Now, solve the following puzzle:\n{puzzle}\n"
-        "Output in the same format as:\n"
+        "Output in the same format as this example including three steps and final answer:\n"
         "Steps:\n"
         "5 + 5 = 10 (left: 5 9 10)\n"
         "10 + 5 = 15 (left: 9 15)\n"
