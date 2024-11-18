@@ -34,8 +34,7 @@ class Gameof24OutputTester():
             self.response[j] = self.response[j].strip()
         if self.response[0] == "Steps:":
             self.response.pop(0)
-        if not self.response[-1].startswith("Asnwer:"):
-            print(self.response[-1])
+        while not self.response[-1].startswith("Answer:"):
             self.response.pop()
 
     # get the left values of a regular line
@@ -156,16 +155,19 @@ def produce_output(infile: str):
     outfile = infile.replace(".json", "_test_results.txt")
     finalfile = open(outfile, "a")
     for oe in other_examples:
-        numbers = oe['original_puzzle']['Puzzles']
-        resp = oe['response']
-        tester = Gameof24OutputTester(puzzle=numbers, response=resp)
-        res, status, statement = tester.eval_response()
-        #finalfile.writelines(f"{numbers} | {resp} | {res} | {status} | {statement}\n")
-        finalfile.writelines(numbers+'\n')
-        finalfile.writelines(resp+'\n')
-        for k, v in res.items():
-            finalfile.writelines(f"{k}: {v}\n")
-        finalfile.writelines(statement+'\n\n')
+        try:
+            numbers = oe['original_puzzle']['Puzzles']
+            resp = oe['response']
+            tester = Gameof24OutputTester(puzzle=numbers, response=resp)
+            res, status, statement = tester.eval_response()
+            #finalfile.writelines(f"{numbers} | {resp} | {res} | {status} | {statement}\n")
+            finalfile.writelines(numbers+'\n')
+            finalfile.writelines(resp+'\n')
+            for k, v in res.items():
+                finalfile.writelines(f"{k}: {v}\n")
+            finalfile.writelines(statement+'\n\n')
+        except:
+            continue
 
 ## quick testing
 if __name__ == "__main__":
@@ -174,7 +176,8 @@ if __name__ == "__main__":
     #         5 * 6 = 30 (left: 6 30)
     #         30 - 6 = 24 (left: 24)
     #         Answer: (5 * (10 - 4)) - 6 = 24'''
-    # tester = Gameof24OutputTester(puzzle='5 6 10 4', response=ex1)
+    # ex2 = "Steps:\n        12 / 4 = 3 (left: 3 5 10)\n        5 * 3 = 15 (left: 10 15)\n        15 + 10 = 25 (left: 25)\n        Answer: (12 / 4 * 5) + 10 = 25\n\nNote: There seems to be a mistake in the given numbers. It's not possible to get 24 with the given numbers (4,5,10,12) using basic arithmetic operations. It can only yield 25 as shown above."
+    # tester = Gameof24OutputTester(puzzle='4 5 10 12', response=ex2)
     # res, status, statement = tester.eval_response()
     # for k,v in res.items():
     #     print(f"{k}:",v)
