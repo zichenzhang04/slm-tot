@@ -103,8 +103,11 @@ Steps:
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: 2 * (9 - 6) * 3 = 18
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 1 3 5 9
 Steps:
@@ -173,8 +176,11 @@ Steps:
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (6 - 4) * 6 + 9 = 21
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 1 4 4 8
 Steps:
@@ -217,8 +223,11 @@ Steps:
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (11 - 6) * 4 + 3 = 23
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 2 4 8 9
 Steps:
@@ -291,8 +300,11 @@ Steps:
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (13 - 9) * (5 - 1) = 16
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 5 6 7 13
 Steps:
@@ -406,8 +418,11 @@ Steps:
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (13 - 9) * (7 - 4) = 12
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 5 6 8 12
 Steps:
@@ -434,8 +449,11 @@ Note: The provided numbers 2, 4, 6, 7 do not allow to obtain 24 by using the bas
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (7 - 2) * (6 - 4) = 10
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 2 5 10 10
 Steps:
@@ -602,8 +620,11 @@ Note: There seems to be a mistake in the given numbers. It's not possible to get
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (12 / 4 * 5) + 10 = 25
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 1 2 7 11
 Steps:
@@ -661,8 +682,11 @@ Steps:
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (27 - 1) - 9 = 17
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 1 4 4 11
 Steps:
@@ -674,8 +698,11 @@ Note: The problem does not have a solution to get 24 with the given input.
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (4 * 4 + 1) + 11 = 28
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 2 3 9 10
 Steps:
@@ -840,8 +867,11 @@ Steps:
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (11 - 7) * 1 * 9 = 36
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 2 3 6 13
 Steps:
@@ -853,8 +883,11 @@ Steps:
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (13 - 6) * 2 * 3 = 42
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 2 2 5 12
 Steps:
@@ -882,8 +915,11 @@ Note: The given numbers (2, 6, 8, 13) cannot be used to obtain 24 by using basic
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (13 - 8) * (6 / 2) = 15
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 8 8 10 12
 Steps:
@@ -1018,8 +1054,11 @@ Steps:
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (7 - 2) * 4 + 3 = 23
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 1 5 12 12
 Steps:
@@ -1109,8 +1148,11 @@ Steps:
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: 5 * (3 * (10 - 7)) = 45
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 4 10 12 13
 Steps:
@@ -1123,8 +1165,11 @@ Note: The above steps do not result in 24, but 36. There is no way to get 24 fro
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: 4 * (10 - (13 - 12)) = 36
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 2 3 10 12
 Steps:
@@ -1287,8 +1332,11 @@ For this input, it's not possible to get 24. The closest we can get is 72.
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (10 - 2) * 3 * 3 = 72
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 3 4 8 12
 Steps:
@@ -1331,8 +1379,11 @@ Note: The original problem may have an error, as the given numbers and operation
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (9 - 2) * (8 - 2) = 42
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 1 5 6 7
 Steps:
@@ -1391,8 +1442,11 @@ Please note, the target number is 24, but in this case, the combination of numbe
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (6 * (5 + 6 / 2)) = 48
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 2 4 9 12
 Steps:
@@ -1404,8 +1458,11 @@ Steps:
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: (12 / 4) * 2 + 9 = 15
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 
 4 8 11 13
 Steps:
@@ -1444,6 +1501,9 @@ Steps:
 Numbers used are in the left of the previous step: True
 The left of the current step contains the numbers not used: True
 The output of the expression is correct: True
-Last step outputs 24: True
-OK
+Last step outputs 24: False
+Failure Step Number: 4
+Failed Step: Answer: ((12 / 3) * 5) + 3 = 23
+Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model.
 

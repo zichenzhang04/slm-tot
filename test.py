@@ -102,7 +102,7 @@ class Gameof24OutputTester():
     # evaluate the answer line
     # Ex: Answer: (5 * (10 - 4)) - 6 = 24
     def eval_answer(self, ans: str):
-        this_ans = ans.replace("Answer:", "").replace("=","==").strip()
+        this_ans = ans.replace("Answer:", "").replace("=","==").strip() + " == 24"
         try:
             expr_result = eval(this_ans)
         except:
