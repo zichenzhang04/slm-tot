@@ -98,17 +98,20 @@ def run(args):
     dataset_path = './datasets/24_test.csv' if args.test_mode else './datasets/24.csv'
     puzzles = read_csv(dataset_path)
     log = []
-
+    #count = 0
     # Solve every puzzle in the dataset
     for puzzle in puzzles:
-        puzzle_text = puzzle['Puzzles']
-        response = prompt_gpt(puzzle_text, args.backend, args.temperature)
-        # Log the model's response
-        log_entry = {
-            "original_puzzle": puzzle,  # Record the question
-            "response": response
-        }
-        log.append(log_entry)
+        if 'count >= 901 and count <= 1000':
+            puzzle_text = puzzle['Puzzles']
+            response = prompt_gpt(puzzle_text, args.backend, args.temperature)
+            # Log the model's response
+            log_entry = {
+                "original_puzzle": puzzle,  # Record the question
+                "response": response
+            }
+            log.append(log_entry)
+        #count += 1
+        #print(count)
 
     os.makedirs('./logs', exist_ok=True)
     # Generate and save the log file
