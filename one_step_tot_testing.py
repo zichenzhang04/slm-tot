@@ -200,8 +200,9 @@ def generate_plots_one_step_tot():
         values = []
         for sc in categories:
             values.append(counts[sc])
-        values = pd.Series(counts.values())
-        values = (values/sum(values)).tolist()
+        total_of_values = sum(values)
+        for v in range(len(values)):
+            values[v] /= total_of_values
         fig,ax = plt.subplots()
         ax.bar(categories, values)
         ax.set_ylabel("Fraction")
