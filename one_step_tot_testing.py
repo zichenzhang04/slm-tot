@@ -225,13 +225,13 @@ if __name__ == "__main__":
     # for k,v in res.items():
     #     print(f"{k}:",v)
     # print("\n"+statement)
-    ex3 = "1 + 1 = 2 (left: 2 3 8)\n2 * 8 = 16 (left: 3 16)\n16 + 3 = 24 (left: 24)\nAnswer: (1 + 1) * 8 + 3 = 24"
-    tester2 = Gameof24OutputTester(puzzle='1 1 3 8', response=ex3)
-    res2, status2, statement2 = tester2.eval_response()
-    for k,v in res2.items():
-        print(f"{k}:",v)
-    print("\n"+statement2)
-    '''# testing on the file "answers_game24_gpt-4_0.7_False.json"
+    # ex3 = "1 + 1 = 2 (left: 2 3 8)\n2 * 8 = 16 (left: 3 16)\n16 + 3 = 24 (left: 24)\nAnswer: (1 + 1) * 8 + 3 = 24"
+    # tester2 = Gameof24OutputTester(puzzle='1 1 3 8', response=ex3)
+    # res2, status2, statement2 = tester2.eval_response()
+    # for k,v in res2.items():
+    #     print(f"{k}:",v)
+    # print("\n"+statement2)
+    # testing on the file "answers_game24_gpt-4_0.7_False.json"
     produce_output_gpt_4()
     
     # testing on the file 'logs/game24_gpt-4o_0.7_False.json'
@@ -242,4 +242,4 @@ if __name__ == "__main__":
         
     
     # generate the plots as in Figure 3(a)
-    generate_plots_one_step_tot()'''
+    generate_plots_one_step_tot()
