@@ -8,7 +8,7 @@ from test import Gameof24OutputTester
 
 # function to produce output file for 'answers_game24_gpt-4_0.7_False.json'
 def produce_output_gpt_4():
-    infile = "logs/answers_game24_gpt-4_0.7_False.json"
+    infile = "logs/one_step_ToT/answers_game24_gpt-4_0.7_False.json"
     with open(infile, "r") as resfile:
         other_examples = json.load(resfile)
     # output file
@@ -41,7 +41,7 @@ def produce_output_gpt_4():
 
 # function to get rid of crap from the 'game24_gpt-4o_0.7_False.json'. Still need to do a minor double check.
 def remove_crap_from_gpt4o_output():
-    infile2 = "logs/game24_gpt-4o_0.7_False.json"
+    infile2 = "logs/one_step_ToT/game24_gpt-4o_0.7_False.json"
     keywords = ["try", "another", "backtrack", "different", "incorrect", "attempt", "mistake", 
                 "approach", "path", "correct", "steps", "solution", "add", "divide", "multiply", "subtract", 
                 "finally", "conclusion", "sequence", "explanation", "doesn't", "does not", "operations", "still", 
@@ -129,7 +129,7 @@ def remove_crap_from_gpt4o_output():
 # function to produce output file for 'game24_gpt-4o_0.7_False.json', using the "intermediate"
 def produce_output_gpt_4o():
     proceed = False
-    infile = 'logs/game24_gpt-4o_0.7_False_intermediate.txt'
+    infile = 'logs/one_step_ToT/game24_gpt-4o_0.7_False_intermediate.txt'
     outfile = infile.replace("_intermediate.txt", "_test_results.csv")
     responses = []
     results = []
@@ -151,7 +151,7 @@ def produce_output_gpt_4o():
             if len(newline) == 0:
                 continue
             # for each number, we have a puzzle and response. Puzzle comes after Rank
-            elif len(newline) == 3 or newline == "1000" or newline == "1001":
+            elif newline.isnumeric():
                 responses.append({"rank": newline, "puzzle": "", "response": ""})
                 numbers_next = True
             # numbers line
@@ -185,8 +185,8 @@ def produce_output_gpt_4o():
 
 
 def generate_plots_one_step_tot():
-    gpt4csv = 'logs/answers_game24_gpt-4_0.7_False_test_results.csv'
-    gpt4ocsv = 'logs/game24_gpt-4o_0.7_False_test_results.csv'
+    gpt4csv = 'logs/one_step_ToT/answers_game24_gpt-4_0.7_False_test_results.csv'
+    gpt4ocsv = 'logs/one_step_ToT/game24_gpt-4o_0.7_False_test_results.csv'
     '''gpt4_df = pd.read_csv(gpt4csv)
     gpt4o_df = pd.read_csv(gpt4ocsv)'''
     # data for each model
@@ -225,8 +225,13 @@ if __name__ == "__main__":
     # for k,v in res.items():
     #     print(f"{k}:",v)
     # print("\n"+statement)
-
-    # testing on the file "answers_game24_gpt-4_0.7_False.json"
+    ex3 = "1 + 1 = 2 (left: 2 3 8)\n2 * 8 = 16 (left: 3 16)\n16 + 3 = 24 (left: 24)\nAnswer: (1 + 1) * 8 + 3 = 24"
+    tester2 = Gameof24OutputTester(puzzle='1 1 3 8', response=ex3)
+    res2, status2, statement2 = tester2.eval_response()
+    for k,v in res2.items():
+        print(f"{k}:",v)
+    print("\n"+statement2)
+    '''# testing on the file "answers_game24_gpt-4_0.7_False.json"
     produce_output_gpt_4()
     
     # testing on the file 'logs/game24_gpt-4o_0.7_False.json'
@@ -237,4 +242,4 @@ if __name__ == "__main__":
         
     
     # generate the plots as in Figure 3(a)
-    generate_plots_one_step_tot()
+    generate_plots_one_step_tot()'''
