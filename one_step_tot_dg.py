@@ -1,14 +1,21 @@
 import os
 import json
 import argparse
+import backoff
 import csv
+import openai
 from dotenv import load_dotenv
 from openai import OpenAI
+from pydantic import BaseModel
 
 # Load the API key from .env file
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+
+class g24response(BaseModel):
+    Steps: str
+    Answer: str
 
 def read_csv(file_path):
     puzzles = []
@@ -76,20 +83,21 @@ def generate_prompt(puzzle):
     )
     return prompt
 
-
+@backoff.on_exception(backoff.expo, openai.LengthFinishReasonError)
 def prompt_gpt(puzzle, backend, temperature):
     prompt = generate_prompt(puzzle)
     # TODO: consider adding response_format parameter to format the JSON output
-    response = client.chat.completions.create(
+    response = client.beta.chat.completions.parse(
         model=backend,
         messages=[{"role": "user", "content": prompt}],
-        temperature=temperature
+        temperature=temperature,
+        response_format=g24response,
     )
     return response.choices[0].message.content
 
 
 def generate_log_filename(args):
-    filename = f"./logs/{args.task}_{args.backend}_{args.temperature}_{args.test_mode}"
+    filename = f"./logs/finetune/{args.task}_{args.backend}_{args.temperature}_{args.test_mode}"
     return filename
 
 
@@ -101,23 +109,25 @@ def run(args):
     count = 0
     # Solve every puzzle in the dataset
     for puzzle in puzzles:
-        if 'count >= 901 and count <= 1000': # condition nullify for finetune data generation
-            puzzle_text = puzzle['Puzzles']
-            response = prompt_gpt(puzzle_text, args.backend, args.temperature)
-            # Log the model's response
-            log_entry = {
-                "original_puzzle": puzzle,  # Record the question
-                "response": response
-            }
-            log.append(log_entry)
-        count += 1
-        print(count)
         rank = int(puzzle['Rank'])
-        if rank % 100 == 0:
-            log_filename = generate_log_filename(args) + f"_{rank - 99}-{rank}.json"
-            with open(log_filename, 'w') as f:
-                json.dump(log, f, indent=4)
-            log = []
+        if rank > 500:
+            if 'rank >= 201 and rank <= 300': # condition nullify for finetune data generation
+                puzzle_text = puzzle['Puzzles']
+                response = prompt_gpt(puzzle_text, args.backend, args.temperature)
+                # Log the model's response
+                log_entry = {
+                    "original_puzzle": puzzle,  # Record the question
+                    "response": json.loads(response)
+                }
+                log.append(log_entry)
+            print(rank)
+            if rank % 10 == 1:
+                print(log_entry)
+            if rank % 50 == 0 or rank == len(puzzles):
+                log_filename = generate_log_filename(args) + f"_{rank}.json"
+                with open(log_filename, 'w') as f:
+                    json.dump(log, f, indent=4)
+                log = []
 
     # # Generate and save the log file
     # log_filename = generate_log_filename(args)

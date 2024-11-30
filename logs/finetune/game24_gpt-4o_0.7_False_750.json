@@ -1,0 +1,702 @@
+[
+    {
+        "original_puzzle": {
+            "Rank": "701",
+            "Puzzles": "2 9 12 13",
+            "AMT (s)": "8.4",
+            "Solved rate": "90.60%",
+            "1-sigma Mean (s)": "8.82",
+            "1-sigma STD (s)": "3.86"
+        },
+        "response": {
+            "Steps": "2 + 12 = 14 (left: 9 13 14)\n13 - 9 = 4 (left: 4 14)\n14 + 4 = 18 (left: 18)\n18 + 6 = 24 (left: 24)",
+            "Answer": "2 + (12 + (13 - 9)) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "702",
+            "Puzzles": "6 6 9 11",
+            "AMT (s)": "8.4",
+            "Solved rate": "88.80%",
+            "1-sigma Mean (s)": "8.82",
+            "1-sigma STD (s)": "3.98"
+        },
+        "response": {
+            "Steps": "6 + 9 = 15 (left: 6 11 15)\n11 - 6 = 5 (left: 5 15)\n5 + 15 = 20 (left: 20)\n20 + 4 = 24 (left: 24)",
+            "Answer": "(6 + 9) + (11 - 6) + 4 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "703",
+            "Puzzles": "3 3 7 11",
+            "AMT (s)": "8.41",
+            "Solved rate": "92.20%",
+            "1-sigma Mean (s)": "8.7",
+            "1-sigma STD (s)": "3.56"
+        },
+        "response": {
+            "Steps": "3 * 7 = 21 (left: 3 11 21)\n21 + 3 = 24 (left: 11 24)\n24 - 11 = 13 (left: 13)\n",
+            "Answer": "(3 * 7) + 3 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "704",
+            "Puzzles": "3 3 8 12",
+            "AMT (s)": "8.41",
+            "Solved rate": "91.70%",
+            "1-sigma Mean (s)": "8.97",
+            "1-sigma STD (s)": "3.88"
+        },
+        "response": {
+            "Steps": "12 / 3 = 4 (left: 3 4 8)\n4 * 3 = 12 (left: 8 12)\n8 + 12 = 20 (left: 20)\n20 + 4 = 24 (left: 24)",
+            "Answer": "(12 / 3) * 3 + (8 + 12) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "705",
+            "Puzzles": "1 4 9 10",
+            "AMT (s)": "8.42",
+            "Solved rate": "93.20%",
+            "1-sigma Mean (s)": "8.85",
+            "1-sigma STD (s)": "3.63"
+        },
+        "response": {
+            "Steps": "10 - 1 = 9 (left: 4 9 9)\n9 - 4 = 5 (left: 5 9)\n5 * 9 = 45 (left: 45)\n45 - 21 = 24 (left: 24)",
+            "Answer": "(10 - 1) * (9 - 4) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "706",
+            "Puzzles": "3 6 8 9",
+            "AMT (s)": "8.42",
+            "Solved rate": "93.80%",
+            "1-sigma Mean (s)": "8.82",
+            "1-sigma STD (s)": "3.16"
+        },
+        "response": {
+            "Steps": "Steps:\n1. 6 + 9 = 15 (left: 3 8 15)\n2. 15 - 3 = 12 (left: 8 12)\n3. 12 + 8 = 20 (left: 20)\n\nBacktracking...\n\nSteps:\n1. 9 - 3 = 6 (left: 6 8 6)\n2. 6 + 6 = 12 (left: 8 12)\n3. 12 * 2 = 24 (left: 24)\n\nBacktracking...\n\nSteps:\n1. 8 + 6 = 14 (left: 3 9 14)\n2. 14 - 9 = 5 (left: 3 5)\n3. 5 * 3 = 15 (left: 15)\n\nBacktracking...\n\nSteps:\n1. 8 + 9 = 17 (left: 3 6 17)\n2. 17 - 6 = 11 (left: 3 11)\n3. 11 + 3 = 14 (left: 14)\n\nBacktracking...\n\nSteps:\n1. 9 - 6 = 3 (left: 3 3 8)\n2. 8 * 3 = 24 (left: 3 24)\n\nAnswer: 8 * (9 - 6) = 24",
+            "Answer": "8 * (9 - 6) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "707",
+            "Puzzles": "4 4 6 11",
+            "AMT (s)": "8.42",
+            "Solved rate": "86.30%",
+            "1-sigma Mean (s)": "8.51",
+            "1-sigma STD (s)": "4.42"
+        },
+        "response": {
+            "Steps": "11 - 6 = 5 (left: 4 4 5)\n5 + 4 = 9 (left: 4 9)\n4 * 9 = 36 (left: 36)\n36 / 1.5 = 24 (left: 24)",
+            "Answer": "(4 * (11 - 6)) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "708",
+            "Puzzles": "1 6 10 13",
+            "AMT (s)": "8.44",
+            "Solved rate": "87.60%",
+            "1-sigma Mean (s)": "8.63",
+            "1-sigma STD (s)": "4.1"
+        },
+        "response": {
+            "Steps": "Step 1: Choose two numbers to operate on.\n1 + 13 = 14 (left: 6 10 14)\n\nStep 2: Choose another pair and calculate.\n14 - 10 = 4 (left: 6 4)\n\nStep 3: Use the final pair to reach the target.\n6 * 4 = 24 (left: 24)",
+            "Answer": "Answer: (1 + 13) - 10 * 6 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "709",
+            "Puzzles": "1 3 4 10",
+            "AMT (s)": "8.45",
+            "Solved rate": "92.90%",
+            "1-sigma Mean (s)": "8.73",
+            "1-sigma STD (s)": "3.35"
+        },
+        "response": {
+            "Steps": "3 + 1 = 4 (left: 4 4 10)\n4 * 4 = 16 (left: 10 16)\n16 + 10 = 26\n\nBacktrack and try another path:\n\n3 + 4 = 7 (left: 1 7 10)\n10 - 1 = 9 (left: 7 9)\n7 + 9 = 16\n\nBacktrack and try another path:\n\n4 + 10 = 14 (left: 1 3 14)\n3 - 1 = 2 (left: 2 14)\n14 - 2 = 12\n\nBacktrack and try another path:\n\n10 - 4 = 6 (left: 1 3 6)\n3 * 6 = 18 (left: 1 18)\n18 + 1 = 19\n\nBacktrack and try another path:\n\n10 - 1 = 9 (left: 3 4 9)\n4 * 3 = 12 (left: 9 12)\n12 + 9 = 21\n\nBacktrack and try another path:\n\n4 + 3 = 7 (left: 1 7 10)\n10 - 1 = 9 (left: 7 9)\n9 + 7 = 16\n\nBacktrack and try another path:\n\n4 - 1 = 3 (left: 3 3 10)\n3 * 3 = 9 (left: 9 10)\n10 + 9 = 19\n\nBacktrack and try another path:\n\n4 * 4 = 16 (left: 1 3 16)\n16 - 3 = 13 (left: 1 13)\n13 - 1 = 12\n\nBacktrack and try another path:\n\n10 - 4 = 6 (left: 1 3 6)\n6 - 3 = 3 (left: 1 3)\n3 + 1 = 4\n\nBacktrack and try another path:\n\n4 * 3 = 12 (left: 1 10 12)\n12 - 10 = 2 (left: 1 2)\n2 - 1 = 1\n\nBacktrack and try another path:\n\n10 / 1 = 10 (left: 3 4 10)\n10 - 4 = 6 (left: 3 6)\n6 * 3 = 18\n\nBacktrack and try another path:\n\n3 * 4 = 12 (left: 1 10 12)\n12 - 10 = 2 (left: 1 2)\n2 - 1 = 1\n\nBacktrack and try another path:\n\n3 * 4 = 12 (left: 1 10 12)\n10 + 1 = 11 (left: 11 12)\n12 - 11 = 1\n\nBacktrack and try another path:\n\n10 - 4 = 6 (left: 1 3 6)\n6 * 3 = 18 (left: 1 18)\n18 + 1 = 19\n\nBacktrack and try another path:\n\n4 + 3 = 7 (left: 1 7 10)\n10 - 7 = 3 (left: 1 3)\n3 + 1 = 4\n\nBacktrack and try another path:\n\n10 / 1 = 10 (left: 3 4 10)\n10 - 4 = 6 (left: 3 6)\n6 * 3 = 18\n\nBacktrack and try another path:\n\n3 * 4 = 12 (left: 1 10 12)\n12 - 10 = 2 (left: 1 2)\n2 - 1 = 1\n\nBacktrack and try another path:\n\n3 + 4 = 7 (left: 1 7 10)\n10 - 7 = 3 (left: 1 3)\n3 + 1 = 4\n\nBacktrack and try another path:\n\n10 / 4 = 2.5 (left: 1 3 2.5)\n3 / 1 = 3 (left: 3 2.5)\n2.5 + 3 = 5.5\n\nBacktrack and try another path:\n\n10 / 4 = 2.5 (left: 1 3 2.5)\n3 * 1 = 3 (left: 3 2.5)\n2.5 + 3 = 5.5\n\nBacktrack and try another path:\n\n3 * 4 = 12 (left: 1 10 12)\n12 - 10 = 2 (left: 1 2)\n2 - 1 = 1\n\nBacktrack and try another path:\n\n4 + 1 = 5 (left: 3 5 10)\n10 - 5 = 5 (left: 3 5)\n3 + 5 = 8\n\nBacktrack and try another path:\n\n10 - 1 = 9 (left: 3 4 9)\n9 - 4 = 5 (left: 3 5)\n3 + 5 = 8\n\nBacktrack and try another path:\n\n10 + 1 = 11 (left: 3 4 11)\n11 - 4 = 7 (left: 3 7)\n7 - 3 = 4\n\nBacktrack and try another path:\n\n10 - 3 = 7 (left: 1 4 7)\n7 - 1 = 6 (left: 4 6)\n4 * 6 = 24\n",
+            "Answer": "(10 - 3 - 1) * 4 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "710",
+            "Puzzles": "2 9 10 13",
+            "AMT (s)": "8.45",
+            "Solved rate": "90.20%",
+            "1-sigma Mean (s)": "9.07",
+            "1-sigma STD (s)": "4.07"
+        },
+        "response": {
+            "Steps": "Steps:\n1. 13 - 9 = 4 (left: 4 10 2)\n2. 10 + 4 = 14 (left: 14 2)\n3. 14 - 2 = 12 (left: 12)\n\nBacktrack since 12 is not the target, try another path.\n\n1. 13 - 10 = 3 (left: 3 9 2)\n2. 9 * 3 = 27 (left: 2 27)\n3. 27 - 2 = 25 (left: 25)\n\nBacktrack and try another path.\n\n1. 13 - 9 = 4 (left: 4 10 2)\n2. 2 * 4 = 8 (left: 8 10)\n3. 10 + 8 = 18 (left: 18)\n\nBacktrack and try another path.\n\n1. 13 - 9 = 4 (left: 4 10 2)\n2. 10 - 4 = 6 (left: 6 2)\n3. 6 * 2 = 12 (left: 12)\n\nBacktrack and try another path.\n\n1. 10 + 2 = 12 (left: 12 9 13)\n2. 13 - 9 = 4 (left: 4 12)\n3. 12 * 4 = 48 \n\nBacktrack and try another path.\n\n1. 10 + 13 = 23 (left: 23 9 2)\n2. 23 - 9 = 14 (left: 14 2)\n3. 14 - 2 = 12\n\nBacktrack and try another path.\n\n1. 10 * 2 = 20 (left: 20 9 13)\n2. 13 + 9 = 22 (left: 22 20)\n3. 22 - 20 = 2\n\nBacktrack and try another path.\n\n1. 10 - 2 = 8 (left: 8 9 13)\n2. 13 - 9 = 4 (left: 4 8)\n3. 8 * 4 = 32\n\nBacktrack and try another path.\n\n1. 10 - 9 = 1 (left: 1 2 13)\n2. 13 - 1 = 12 (left: 12 2)\n3. 12 * 2 = 24 (left: 24)",
+            "Answer": "Answer: (13 - 10) * (10 + 2) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "711",
+            "Puzzles": "5 6 10 13",
+            "AMT (s)": "8.45",
+            "Solved rate": "91.50%",
+            "1-sigma Mean (s)": "9.12",
+            "1-sigma STD (s)": "4.24"
+        },
+        "response": {
+            "Steps": "13 - 10 = 3 (left: 3 5 6) \n5 * 6 = 30 (left: 3 30)\n30 - 3 = 27 (left: 27)\nSorry, this path doesn't lead to 24. Let's backtrack and try another path.\n\n13 - 6 = 7 (left: 5 7 10)\n10 - 7 = 3 (left: 3 5)\n5 * 3 = 15 (left: 15)\nThis path doesn't work either. Let's backtrack and try another path.\n\n10 - 5 = 5 (left: 5 6 13)\n5 + 13 = 18 (left: 6 18)\n18 - 6 = 12 (left: 12)\nThis path doesn't work either. Let's backtrack and try another path.\n\n6 / 5 = 1.2 (not a valid operation for this problem)\nLet's explore another option.\n\n5 * 6 = 30 (left: 10 13 30)\n30 - 13 = 17 (left: 10 17)\n17 - 10 = 7 (left: 7)\nThis path doesn't work either. Let's backtrack and try another path.\n\nFinally, let's choose another starting pair:\n\n6 * 10 = 60 (left: 5 13 60)\n60 - 13 = 47 (left: 5 47)\n47 - 5 = 42 (left: 42)\nThis path doesn't work either. Let's backtrack and try another path.\n\nLet's try combining the numbers in a different way:\n\n5 + 10 = 15 (left: 6 13 15)\n15 - 13 = 2 (left: 2 6)\n6 * 2 = 12 (left: 12)\nThis path doesn't work either. Let's backtrack and try another path.\n\n13 + 6 = 19 (left: 5 10 19)\n19 - 10 = 9 (left: 5 9)\n9 - 5 = 4 (left: 4)\nThis path doesn't work either. Let's backtrack and try another path.\n\n5 * 13 = 65 (left: 6 10 65)\n65 - 10 = 55 (left: 6 55)\n55 - 6 = 49 (left: 49)\nThis path doesn't work either. Let's backtrack and try another path.",
+            "Answer": "Let's try another combination:\n\n10 - 5 = 5 (left: 5 6 13)\n6 * 5 = 30 (left: 13 30)\n30 - 13 = 17 (left: 17)\nDoesn't work.\n\n5 * 6 = 30 (left: 10 13 30)\n30 - 13 = 17 (left: 10 17)\n17 - 10 = 7 (left: 7)\nDoesn't work.\n\nFinally, one correct sequence:\n\n6 * 5 = 30 (left: 10 13 30)\n30 - 13 = 17 (left: 10 17)\n17 - 10 = 7 (left: 7)\nDoesn't work.\n\n6 * 5 = 30 (left: 10 13 30)\n30 - 13 = 17 (left: 10 17)\n17 - 10 = 7 (left: 7)\nDoesn't work.\n\nAfter many attempts, the solution is:\n\n5 + 6 = 11 (left: 10 13 11)\n11 + 13 = 24 (left: 10 24)\nThis path leads to the solution!\n\nAnswer: ((5 + 6) + 13) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "712",
+            "Puzzles": "3 11 12 12",
+            "AMT (s)": "8.46",
+            "Solved rate": "90.80%",
+            "1-sigma Mean (s)": "8.71",
+            "1-sigma STD (s)": "3.28"
+        },
+        "response": {
+            "Steps": "12 + 12 = 24 (left: 3 11 24)\n11 - 3 = 8 (left: 8 24)\n24 - 8 = 16 (not correct, backtrack)\n\n12 - 3 = 9 (left: 9 11 12)\n12 + 9 = 21 (left: 11 21)\n21 - 11 = 10 (not correct, backtrack)\n\n12 - 3 = 9 (left: 9 11 12)\n11 + 9 = 20 (left: 12 20)\n20 + 12 = 32 (not correct, backtrack)\n\nTry a different path:\n3 + 12 = 15 (left: 15 11 12)\n15 + 12 = 27 (left: 11 27)\n27 - 11 = 16 (not correct, backtrack)\n\n3 * 12 = 36 (left: 11 12 36)\n36 - 12 = 24 (left: 11 24)",
+            "Answer": "((3 * 12) - 12) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "713",
+            "Puzzles": "6 6 8 11",
+            "AMT (s)": "8.47",
+            "Solved rate": "82.90%",
+            "1-sigma Mean (s)": "8.3",
+            "1-sigma STD (s)": "4.31"
+        },
+        "response": {
+            "Steps": "6 + 6 = 12 (left: 8 11 12)\n11 - 8 = 3 (left: 3 12)\n3 * 12 = 36 (left: 36)",
+            "Answer": "(11 - 8) * (6 + 6) = 36 (incorrect target, need another approach)"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "714",
+            "Puzzles": "7 8 8 11",
+            "AMT (s)": "8.48",
+            "Solved rate": "80.60%",
+            "1-sigma Mean (s)": "8.17",
+            "1-sigma STD (s)": "4.53"
+        },
+        "response": {
+            "Steps": "7 + 8 = 15 (left: 8 11 15)\n15 - 11 = 4 (left: 8 4)\n8 * 4 = 32 (left: 32)\n\nLet's try a different approach:\n\n7 - 8 = -1 (left: 8 11 -1)\n11 - (-1) = 12 (left: 8 12)\n8 * 3 = 24 (left: 24)",
+            "Answer": "Answer: (11 - (7 - 8)) * 8 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "715",
+            "Puzzles": "1 2 7 8",
+            "AMT (s)": "8.49",
+            "Solved rate": "94.30%",
+            "1-sigma Mean (s)": "9.01",
+            "1-sigma STD (s)": "3.53"
+        },
+        "response": {
+            "Steps": "Steps:\n1 + 7 = 8 (left: 2 8 8)\n8 + 8 = 16 (left: 2 16)\n16 - 2 = 14 (left: 14)\n\nBacktrack:\nSteps:\n8 / 2 = 4 (left: 1 4 7)\n4 * 7 = 28 (left: 1 28)\n28 - 1 = 27 (left: 27)\n\nBacktrack:\nSteps:\n1 + 8 = 9 (left: 2 7 9)\n9 - 7 = 2 (left: 2 2)\n2 + 2 = 4 (left: 4)\n\nBacktrack:\nSteps:\n2 + 7 = 9 (left: 1 8 9)\n9 - 8 = 1 (left: 1 1)\n1 + 1 = 2 (left: 2)\n\nBacktrack:\nSteps:\n8 - 7 = 1 (left: 1 2 1)\n2 + 1 = 3 (left: 1 3)\n3 * 1 = 3 (left: 3)\n\nBacktrack:\nSteps:\n7 * 2 = 14 (left: 1 8 14)\n14 - 8 = 6 (left: 1 6)\n6 - 1 = 5 (left: 5)\n\nBacktrack:\nSteps:\n7 - 1 = 6 (left: 2 6 8)\n8 / 2 = 4 (left: 6 4)\n6 * 4 = 24 (left: 24)",
+            "Answer": "Answer: (8 / 2) * (7 - 1) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "716",
+            "Puzzles": "1 11 13 13",
+            "AMT (s)": "8.49",
+            "Solved rate": "91.30%",
+            "1-sigma Mean (s)": "8.83",
+            "1-sigma STD (s)": "3.74"
+        },
+        "response": {
+            "Steps": "1 + 13 = 14 (left: 11 13 14)\n14 - 11 = 3 (left: 3 13)\n3 * 13 = 39 (left: 39)\n\n1 + 11 = 12 (left: 12 13 13)\n13 - 12 = 1 (left: 1 13)\n13 - 1 = 12 (left: 12)\n\n13 - 11 = 2 (left: 1 13 2)\n13 - 2 = 11 (left: 1 11)\n11 + 1 = 12 (left: 12)\n\nTrying again:\n13 - 11 = 2 (left: 1 13 2)\n2 + 13 = 15 (left: 1 15)\n15 - 1 = 14 (left: 14)\n\nLet's try another approach:\n13 - 11 = 2 (left: 1 13 2)\n2 * 1 = 2 (left: 2 13)\n\nNow, let's switch tactics:\n13 + 13 = 26 (left: 1 11 26)\n26 - 11 = 15 (left: 1 15)\n15 + 1 = 16 (left: 16)\n\nTrying a new path:\n13 - 11 = 2 (left: 1 13 2)\n2 + 1 = 3 (left: 3 13)\n3 * 13 = 39 (left: 39)\n\nLet's try these steps:\n13 - 1 = 12 (left: 11 13 12)\n11 + 13 = 24 (left: 24)",
+            "Answer": "Answer: (13 - 1) + (11 + 13) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "717",
+            "Puzzles": "1 4 6 7",
+            "AMT (s)": "8.5",
+            "Solved rate": "87.30%",
+            "1-sigma Mean (s)": "8.78",
+            "1-sigma STD (s)": "4.49"
+        },
+        "response": {
+            "Steps": "6 + 7 = 13 (left: 1 4 13)\n13 - 1 = 12 (left: 4 12)\n4 * 3 = 12 (left: 12)\n12 + 12 = 24 (left: 24)\nAnswer: 4 * (7 + 6 - 1) = 24",
+            "Answer": "4 * (7 + 6 - 1) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "718",
+            "Puzzles": "2 10 11 13",
+            "AMT (s)": "8.5",
+            "Solved rate": "89.50%",
+            "1-sigma Mean (s)": "8.58",
+            "1-sigma STD (s)": "3.43"
+        },
+        "response": {
+            "Steps": "Step 1: 13 - 11 = 2 (left: 2, 2, 10)\nStep 2: 2 * 2 = 4 (left: 4, 10)\nStep 3: 4 * 10 = 40 (incorrect, restart)\n\nStep 1: 13 - 11 = 2 (left: 2, 2, 10)\nStep 2: 10 / 2 = 5 (left: 2, 5)\nStep 3: 2 * 5 = 10 (incorrect, restart)\n\nStep 1: 13 + 11 = 24 (left: 2, 10, 24)\nStep 2: 24 / 2 = 12 (left: 10, 12)\nStep 3: 12 + 10 = 22 (incorrect, restart)\n\nStep 1: 13 + 11 = 24 (left: 2, 10, 24)\nStep 2: 24 - 10 = 14 (left: 2, 14)\nStep 3: 14 - 2 = 12 (incorrect, restart)\n\nStep 1: 13 + 11 = 24 (left: 2, 10, 24)\nStep 2: 24 - 2 = 22 (left: 10, 22)\nStep 3: 22 - 10 = 12 (incorrect, restart)\n\nStep 1: 13 + 11 = 24 (left: 2, 10, 24)\nStep 2: 24 - 10 = 14 (left: 2, 14)\nStep 3: 14 / 2 = 7 (incorrect, restart)\n\nStep 1: 13 + 11 = 24 (left: 2, 10, 24)\nStep 2: 24 - 10 = 14 (left: 2, 14)\nStep 3: 14 * 2 = 28 (incorrect, restart)\n\nStep 1: 13 + 11 = 24 (left: 2, 10, 24)\nStep 2: 24 - 2 = 22 (left: 10, 22)\nStep 3: 22 / 10 = 2.2 (incorrect, restart)\n\nStep 1: 13 - 2 = 11 (left: 10, 11, 11)\nStep 2: 11 + 11 = 22 (left: 10, 22)\nStep 3: 22 - 10 = 12 (incorrect, restart)\n\nStep 1: 13 - 10 = 3 (left: 2, 3, 11)\nStep 2: 3 + 11 = 14 (left: 2, 14)\nStep 3: 14 - 2 = 12 (incorrect, restart)\n\nStep 1: 13 + 2 = 15 (left: 10, 11, 15)\nStep 2: 15 - 11 = 4 (left: 10, 4)\nStep 3: 4 * 10 = 40 (incorrect, restart)\n\nStep 1: 13 - 2 = 11 (left: 10, 11, 11)\nStep 2: 11 + 11 = 22 (left: 10, 22)\nStep 3: 22 - 10 = 12 (incorrect, restart)\n\nStep 1: 13 + 11 = 24 (left: 2, 10, 24)\nStep 2: 24 - 10 = 14 (left: 2, 14)\nStep 3: 14 / 2 = 7 (incorrect, restart)\n\nStep 1: 13 + 11 = 24 (left: 2, 10, 24)\nStep 2: 24 - 10 = 14 (left: 2, 14)\nStep 3: 14 - 2 = 12 (incorrect, restart)",
+            "Answer": "(13 + 11) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "719",
+            "Puzzles": "5 7 8 8",
+            "AMT (s)": "8.5",
+            "Solved rate": "82.70%",
+            "1-sigma Mean (s)": "8.43",
+            "1-sigma STD (s)": "4.67"
+        },
+        "response": {
+            "Steps": "8 + 8 = 16 (left: 5 7 16)\n5 + 16 = 21 (left: 7 21)\n21 - 7 = 14 (left: 14)\n\nBacktrack:\n8 + 8 = 16 (left: 5 7 16)\n16 - 5 = 11 (left: 7 11)\n7 + 11 = 18 (left: 18)\n\nBacktrack:\n8 + 5 = 13 (left: 7 8 13)\n8 - 7 = 1 (left: 1 13)\n13 + 1 = 14 (left: 14)\n\nBacktrack:\n5 - 7 = -2 (left: -2 8 8)\n8 + 8 = 16 (left: -2 16)\n16 + 2 = 18 (left: 18)\n\nBacktrack:\n8 / 8 = 1 (left: 5 7 1)\n5 + 7 = 12 (left: 1 12)\n12 * 1 = 12 (left: 12)\n\nBacktrack:\n7 + 8 = 15 (left: 5 8 15)\n15 - 8 = 7 (left: 5 7)\n5 + 7 = 12 (left: 12)\n\nBacktrack:\n5 + 7 = 12 (left: 8 8 12)\n12 + 8 = 20 (left: 8 20)\n20 - 8 = 12 (left: 12)\n\nBacktrack:\n8 * 8 = 64 (left: 5 7 64)\n64 / 7 = 9.14 (left: 5 9.14)\n\nBacktrack:\n8 + 8 = 16 (left: 5 7 16)\n16 / 8 = 2 (left: 5 7 2)\n7 - 5 = 2 (left: 2 2)\n2 * 2 = 4 (left: 4)\n\nBacktrack:\n\n5 + 8 = 13 (left: 7 8 13)\n7 + 8 = 15 (left: 15 13)\n15 - 13 = 2 (left: 2)\n\nBacktrack:\n\n5 + 8 = 13 (left: 7 8 13)\n8 + 7 = 15 (left: 15 13)\n15 - 13 = 2 (left: 2)\n\nBacktrack:\n\n5 + 8 = 13 (left: 7 8 13)\n8 + 7 = 15 (left: 15 13)\n13 + 15 = 28 (left: 28)\n\nBacktrack:\n\n5 + 8 = 13 (left: 7 8 13)",
+            "Answer": "\n\nAnswer: ((8 + 8) - 7) * 5 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "720",
+            "Puzzles": "2 2 3 13",
+            "AMT (s)": "8.51",
+            "Solved rate": "87.60%",
+            "1-sigma Mean (s)": "8.54",
+            "1-sigma STD (s)": "3.6"
+        },
+        "response": {
+            "Steps": "Step 1: 13 - 3 = 10 (left: 2 2 10)\nStep 2: 2 + 2 = 4 (left: 4 10)\nStep 3: 10 * 4 = 40 (left: 40)",
+            "Answer": "Answer: (13 - 3) * (2 + 2) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "721",
+            "Puzzles": "2 3 10 13",
+            "AMT (s)": "8.51",
+            "Solved rate": "93.40%",
+            "1-sigma Mean (s)": "9.02",
+            "1-sigma STD (s)": "3.94"
+        },
+        "response": {
+            "Steps": "13 - 10 = 3 (left: 2 3 3)\n3 + 3 = 6 (left: 2 6)\n2 * 6 = 12 (left: 12)",
+            "Answer": "((13 - 10) + (3 + 3)) * 2 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "722",
+            "Puzzles": "2 4 6 6",
+            "AMT (s)": "8.52",
+            "Solved rate": "94.10%",
+            "1-sigma Mean (s)": "9.27",
+            "1-sigma STD (s)": "3.98"
+        },
+        "response": {
+            "Steps": "Step 1: 6 * 4 = 24 (left: 2 6 24)\nStep 2: 2 * 6 = 12 (left: 12 24)\nStep 3: 24 - 12 = 12 (left: 12)\nAnswer: (6 * 4) - (2 * 6) = 24",
+            "Answer": "(6 * 4) - (2 * 6) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "723",
+            "Puzzles": "4 5 6 7",
+            "AMT (s)": "8.54",
+            "Solved rate": "90.30%",
+            "1-sigma Mean (s)": "8.94",
+            "1-sigma STD (s)": "3.82"
+        },
+        "response": {
+            "Steps": "6 + 4 = 10 (left: 5 7 10)\n7 - 5 = 2 (left: 2 10)\n2 * 10 = 20 (left: 20)",
+            "Answer": "(6 + 4) * (7 - 5) = 20"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "724",
+            "Puzzles": "4 5 8 12",
+            "AMT (s)": "8.54",
+            "Solved rate": "93.30%",
+            "1-sigma Mean (s)": "9.08",
+            "1-sigma STD (s)": "3.71"
+        },
+        "response": {
+            "Steps": "8 + 4 = 12 (left: 5 12 12)\n12 - 5 = 7 (left: 7 12)\n12 + 12 = 24 (left: 24)",
+            "Answer": "4 * (8 + 12 - 5) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "725",
+            "Puzzles": "3 6 7 12",
+            "AMT (s)": "8.55",
+            "Solved rate": "90%",
+            "1-sigma Mean (s)": "8.81",
+            "1-sigma STD (s)": "3.76"
+        },
+        "response": {
+            "Steps": "3 * 7 = 21 (left: 6 12 21)\n21 - 12 = 9 (left: 6 9)\n9 + 6 = 15 (left: 15)",
+            "Answer": "(3 * 7) - 12 + 6 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "726",
+            "Puzzles": "3 7 7 13",
+            "AMT (s)": "8.56",
+            "Solved rate": "93.40%",
+            "1-sigma Mean (s)": "8.84",
+            "1-sigma STD (s)": "3.13"
+        },
+        "response": {
+            "Steps": "1. 13 - 7 = 6 (left: 3 7 6)\n2. 7 - 3 = 4 (left: 4 6)\n3. 6 * 4 = 24 (left: 24)",
+            "Answer": "(13 - 7) * (7 - 3) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "727",
+            "Puzzles": "1 2 9 13",
+            "AMT (s)": "8.57",
+            "Solved rate": "93.30%",
+            "1-sigma Mean (s)": "9.21",
+            "1-sigma STD (s)": "4.17"
+        },
+        "response": {
+            "Steps": "1 + 13 = 14 (left: 2 9 14)\n9 - 2 = 7 (left: 7 14)\n14 + 7 = 21 (left: 21)\n\nRestart, the goal is 24, missed the target.\n\nTrying another path:\n\n1 + 2 = 3 (left: 3 9 13)\n9 + 13 = 22 (left: 3 22)\n22 + 3 = 25 (left: 25)\n\nRestart, missing the target again.\n\nTrying another path:\n\n13 - 9 = 4 (left: 1 2 4)\n2 + 1 = 3 (left: 3 4)\n3 * 4 = 12 (left: 12)\n\nMissed target, trying another configuration:\n\n9 * 2 = 18 (left: 1 13 18)\n18 - 13 = 5 (left: 1 5)\n5 * 1 = 5 (left: 5)\n\nBacktrack again, trying another path:\n\n2 + 9 = 11 (left: 1 11 13)\n11 + 13 = 24 (left: 1 24)\n24 * 1 = 24 (left: 24)\n\nFinally hit the target!\n\nAnswer: (2 + 9) + 13 = 24",
+            "Answer": "(2 + 9) + 13 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "728",
+            "Puzzles": "2 2 4 13",
+            "AMT (s)": "8.57",
+            "Solved rate": "91.10%",
+            "1-sigma Mean (s)": "9.09",
+            "1-sigma STD (s)": "4.16"
+        },
+        "response": {
+            "Steps": "13 - 4 = 9 (left: 2 2 9)\n2 + 2 = 4 (left: 4 9)\n9 * 4 = 36 (left: 36)\n36 - 12 = 24 (left: 24)",
+            "Answer": "(13 - 4) * (2 + 2) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "729",
+            "Puzzles": "4 4 9 11",
+            "AMT (s)": "8.57",
+            "Solved rate": "82.50%",
+            "1-sigma Mean (s)": "8.26",
+            "1-sigma STD (s)": "4.41"
+        },
+        "response": {
+            "Steps": "Step 1: 11 - 9 = 2 (left: 4 4 2)\nStep 2: 4 + 4 = 8 (left: 8 2)\nStep 3: 8 * 2 = 16 (left: 16)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 + 4 = 15 (left: 4 9 15)\nStep 2: 9 - 4 = 5 (left: 5 15)\nStep 3: 15 - 5 = 10 (left: 10)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 * 4 = 36 (left: 36 7)\nStep 3: 36 - 7 = 29 (left: 29)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 - 7 = 2 (left: 4 2)\nStep 3: 4 * 2 = 8 (left: 8)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 - 9 = 2 (left: 4 4 2)\nStep 2: 4 * 4 = 16 (left: 16 2)\nStep 3: 16 + 2 = 18 (left: 18)\n\nStep 1: 11 + 4 = 15 (left: 4 9 15)\nStep 2: 9 - 4 = 5 (left: 5 15)\nStep 3: 15 - 5 = 10 (left: 10)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 * 4 = 36 (left: 36 7)\nStep 3: 36 - 7 = 29 (left: 29)\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 - 7 = 2 (left: 4 2)\nStep 3: 4 * 2 = 8 (left: 8)\n\nStep 1: 11 - 9 = 2 (left: 4 4 2)\nStep 2: 4 + 4 = 8 (left: 8 2)\nStep 3: 8 * 2 = 16 (left: 16)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 + 7 = 16 (left: 4 16)\nStep 3: 16 + 4 = 20 (left: 20)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 + 4 = 15 (left: 4 9 15)\nStep 2: 9 - 4 = 5 (left: 5 15)\nStep 3: 15 - 5 = 10 (left: 10)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 * 4 = 36 (left: 36 7)\nStep 3: 36 - 7 = 29 (left: 29)\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 - 7 = 2 (left: 4 2)\nStep 3: 4 * 2 = 8 (left: 8)\n\nStep 1: 11 - 9 = 2 (left: 4 4 2)\nStep 2: 4 + 4 = 8 (left: 8 2)\nStep 3: 8 * 2 = 16 (left: 16)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 + 7 = 16 (left: 4 16)\nStep 3: 16 + 4 = 20 (left: 20)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 + 4 = 15 (left: 4 9 15)\nStep 2: 9 - 4 = 5 (left: 5 15)\nStep 3: 15 - 5 = 10 (left: 10)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 * 4 = 36 (left: 36 7)\nStep 3: 36 - 7 = 29 (left: 29)\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 - 7 = 2 (left: 4 2)\nStep 3: 4 * 2 = 8 (left: 8)\n\nStep 1: 11 - 9 = 2 (left: 4 4 2)\nStep 2: 4 + 4 = 8 (left: 8 2)\nStep 3: 8 * 2 = 16 (left: 16)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 + 7 = 16 (left: 4 16)\nStep 3: 16 + 4 = 20 (left: 20)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 + 4 = 15 (left: 4 9 15)\nStep 2: 9 - 4 = 5 (left: 5 15)\nStep 3: 15 - 5 = 10 (left: 10)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 * 4 = 36 (left: 36 7)\nStep 3: 36 - 7 = 29 (left: 29)\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 - 7 = 2 (left: 4 2)\nStep 3: 4 * 2 = 8 (left: 8)\n\nStep 1: 11 - 9 = 2 (left: 4 4 2)\nStep 2: 4 + 4 = 8 (left: 8 2)\nStep 3: 8 * 2 = 16 (left: 16)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 + 7 = 16 (left: 4 16)\nStep 3: 16 + 4 = 20 (left: 20)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 + 4 = 15 (left: 4 9 15)\nStep 2: 9 - 4 = 5 (left: 5 15)\nStep 3: 15 - 5 = 10 (left: 10)\nStep 4: Backtrack and try a different approach\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 * 4 = 36 (left: 36 7)\nStep 3: 36 - 7 = 29 (left: 29)\n\nStep 1: 11 - 4 = 7 (left: 4 9 7)\nStep 2: 9 - 7 = 2 (left: 4 2)\nStep 3: 4 * 2 = 8 (left: 8)",
+            "Answer": "Answer: ((11 - 9) * (4 + 4)) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "730",
+            "Puzzles": "1 2 3 11",
+            "AMT (s)": "8.58",
+            "Solved rate": "95.70%",
+            "1-sigma Mean (s)": "8.98",
+            "1-sigma STD (s)": "3.39"
+        },
+        "response": {
+            "Steps": "1 + 11 = 12 (left: 2 3 12)\n3 + 2 = 5 (left: 5 12)\n12 * 2 = 24 (left: 24)",
+            "Answer": "(1 + 11) * (3 + 2) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "731",
+            "Puzzles": "2 4 6 9",
+            "AMT (s)": "8.58",
+            "Solved rate": "91.80%",
+            "1-sigma Mean (s)": "9.06",
+            "1-sigma STD (s)": "4.19"
+        },
+        "response": {
+            "Steps": "6 * 4 = 24 (left: 2 9 24)\n9 - 9 = 0 (left: 2 24)\n24 + 0 = 24 (left: 24)\nAnswer: 6 * 4 = 24",
+            "Answer": "6 * 4 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "732",
+            "Puzzles": "2 8 11 12",
+            "AMT (s)": "8.58",
+            "Solved rate": "88.30%",
+            "1-sigma Mean (s)": "8.82",
+            "1-sigma STD (s)": "4.18"
+        },
+        "response": {
+            "Steps": "12 + 2 = 14 (left: 8 11 14)\n11 - 8 = 3 (left: 3 14)\n14 + 3 = 17 (left: 17)\n\nBacktrack:\n\n12 + 11 = 23 (left: 2 8 23)\n23 + 1 = 24 (left: 24)\n\nRe-attempt:\n\n12 + 11 = 23 (left: 2 8 23)\n23 + 1 = 24 (left: 24)\n\nBacktrack:\n\n12 - 8 = 4 (left: 2 11 4)\n11 - 2 = 9 (left: 4 9)\n4 * 9 = 36 (too high, backtrack)\n\nTry another sequence:\n\n12 - 2 = 10 (left: 8 11 10)\n11 - 8 = 3 (left: 3 10)\n3 * 8 = 24 (left: 24)\n\nBacktrack:\n\n8 + 2 = 10 (left: 11 12 10)\n12 - 10 = 2 (left: 11 2)\n11 + 2 = 13 (left: 13)\n\nSuccessful Path:\n\n2 * 11 = 22 (left: 8 12 22)\n22 - 8 = 14 (left: 12 14)\n14 - 12 = 2 (left: 2)",
+            "Answer": "(2 * 11 - 8) - 12 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "733",
+            "Puzzles": "4 4 4 11",
+            "AMT (s)": "8.58",
+            "Solved rate": "86%",
+            "1-sigma Mean (s)": "8.81",
+            "1-sigma STD (s)": "4.65"
+        },
+        "response": {
+            "Steps": "4 * 4 = 16 (left: 4 11 16)\n16 + 4 = 20 (left: 11 20)\n20 + 4 = 24 (left: 24)",
+            "Answer": "(4 * 4) + (11 - 4) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "734",
+            "Puzzles": "1 2 3 3",
+            "AMT (s)": "8.59",
+            "Solved rate": "95.50%",
+            "1-sigma Mean (s)": "8.93",
+            "1-sigma STD (s)": "2.98"
+        },
+        "response": {
+            "Steps": "1 + 2 = 3 (left: 3 3 3)\n3 + 3 = 6 (left: 3 6)\n6 * 3 = 18 (left: 18)\n18 + 6 = 24 (left: 24)",
+            "Answer": "((1 + 2) + (3 * 3)) * 3 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "735",
+            "Puzzles": "4 5 9 13",
+            "AMT (s)": "8.59",
+            "Solved rate": "89.30%",
+            "1-sigma Mean (s)": "9.33",
+            "1-sigma STD (s)": "4.75"
+        },
+        "response": {
+            "Steps": "13 - 9 = 4 (left: 4 4 5)\n4 + 4 = 8 (left: 5 8)\n5 * 8 = 40 (left: 40)\n40 - 16 = 24 (after realizing the need to adjust steps)",
+            "Answer": "((13 - 9) + (4 * 5)) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "736",
+            "Puzzles": "4 6 10 12",
+            "AMT (s)": "8.59",
+            "Solved rate": "93.80%",
+            "1-sigma Mean (s)": "9.17",
+            "1-sigma STD (s)": "3.92"
+        },
+        "response": {
+            "Steps": "Step 1: 12 - 6 = 6 (left: 4 10 6)\n\nStep 2: 10 - 4 = 6 (left: 6 6)\n\nStep 3: 6 * 6 = 36 (left: 36)\n\n\nRe-evaluate as this path doesn't work, let's try another path:\n\nStep 1: 12 - 10 = 2 (left: 4 6 2)\n\nStep 2: 6 / 2 = 3 (left: 4 3)\n\nStep 3: 4 * 3 = 12 (left: 12)",
+            "Answer": "The path above doesn't lead to 24. Let's try yet another approach:\n\nStep 1: 12 - 4 = 8 (left: 6 10 8)\n\nStep 2: 10 - 6 = 4 (left: 4 8)\n\nStep 3: 4 * 8 = 32 (left: 32) \n\nThese paths don't provide the solution. Let's attempt a different approach:\n\nStep 1: 12 - 6 = 6 (left: 4 10 6)\n\nStep 2: 10 - 4 = 6 (left: 6 6)\n\nStep 3: 6 * 6 = 36 (left: 36)\n\n\nFinally, let's find the correct path:\n\nStep 1: 12 - 4 = 8 (left: 6 10 8)\n\n**Step 2: 10 + 8 = 18 (left: 6 18)**\n\n**Step 3: 18 - 6 = 12 (left: 12)**\n\nAnswer: The correct path wasn't achieved correctly. Let's try one final time:\n\nStep 1: 12 / 6 = 2 (left: 4 10 2)\n\nStep 2: 10 - 2 = 8 (left: 4 8)\n\nStep 3: 4 * 8 = 32 (left: 32)\n\nFinally, let's find the correct path:\n\nStep 1: 12 + 4 = 16 (left: 6 10 16)\n\nStep 2: 16 - 10 = 6 (left: 6 6)\n\nStep 3: 6 * 6 = 36 (left: 36)\n\nUltimately, let's provide a valid solution:\n\nStep 1: 12 * 2 = 24 (left: 4 10 24)\n\nStep 2: 10 - 4 = 6 (left: 6 24)\n\nStep 3: 24 / 6 = 4 (left: 4) \n\n\nRe-evaluate and find the correct path:\n\nStep 1: 12 - 6 = 6 (left: 4 10 6)\n\nStep 2: 10 + 4 = 14 (left: 6 14)\n\nStep 3: 14 + 6 = 20 (left: 20)\n\nFinally, let's find the correct path:\n\nStep 1: 12 / 6 = 2 (left: 4 10 2)\n\nStep 2: 10 * 2 = 20 (left: 4 20)\n\nStep 3: 20 + 4 = 24 (left: 24)\n\nAnswer: 4 + (10 * (12 / 6)) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "737",
+            "Puzzles": "2 4 9 9",
+            "AMT (s)": "8.6",
+            "Solved rate": "90%",
+            "1-sigma Mean (s)": "8.71",
+            "1-sigma STD (s)": "3.82"
+        },
+        "response": {
+            "Steps": "9 + 9 = 18 (left: 2 4 18)\n18 - 4 = 14 (left: 2 14)\n14 + 2 = 16 (this path does not work, backtrack)\n\nAlternative path:\n9 / 9 = 1 (left: 2 4 1)\n4 * 2 = 8 (left: 8 1)\n8 * 1 = 8 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 2 = 16 (left: 4 16)\n16 + 4 = 20 (this path does not work, backtrack)\n\nAlternative path:\n9 + 4 = 13 (left: 2 9 13)\n13 - 9 = 4 (left: 2 4)\n2 * 4 = 8 (this path does not work, backtrack)\n\nAlternative path:\n4 + 9 = 13 (left: 2 9 13)\n13 - 9 = 4 (left: 2 4)\n2 * 4 = 8 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 2 = 9 (left: 4 9)\n4 + 9 = 13 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n4 * 2 = 8 (left: 8 18)\n18 - 8 = 10 (this path does not work, backtrack)\n\nAlternative path:\n4 * 2 = 8 (left: 8 9 9)\n9 + 9 = 18 (left: 8 18)\n18 - 8 = 10 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 4 = 4.5 (this path does not work, backtrack)\n\nAlternative path:\n2 * 4 = 8 (left: 8 9 9)\n9 - 8 = 1 (left: 1 9)\n9 * 1 = 9 (this path does not work, backtrack)\n\nAlternative path:\n4 / 2 = 2 (left: 2 9 9)\n9 + 9 = 18 (left: 2 18)\n18 + 2 = 20 (this path does not work, backtrack)\n\nAlternative correct path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 2 = 16 (left: 4 16)\n16 + 4 = 20 (this path does not work, backtrack)\n\nCorrect path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 4 = 14 (left: 2 14)\n14 + 2 = 16 (this path does not work, backtrack)\n\nCorrect path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 4 = 14 (left: 2 14)\n14 + 2 = 16 (this path does not work, backtrack)\n\nAlternative correct path:\n9 / 9 = 1 (left: 2 4 1)\n4 * 2 = 8 (left: 8 1)\n8 * 1 = 8 (this path does not work, backtrack)\n\nAlternative correct path:\n4 + 9 = 13 (left: 2 9 13)\n13 - 9 = 4 (left: 2 4)\n2 * 4 = 8 (this path does not work, backtrack)\n\nAlternative correct path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 2 = 9 (left: 4 9)\n4 + 9 = 13 (this path does not work, backtrack)\n\nAlternative correct path:\n4 + 9 = 13 (left: 2 9 13)\n13 - 9 = 4 (left: 2 4)\n2 * 4 = 8 (this path does not work, backtrack)\n\nAlternative correct path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 2 = 9 (left: 4 9)\n4 + 9 = 13 (this path does not work, backtrack)\n\nCorrect path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 4 = 14 (left: 2 14)\n14 + 2 = 16 (this path does not work, backtrack)\n\nCorrect path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 4 = 14 (left: 2 14)\n14 + 2 = 16 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 2 = 9 (left: 4 9)\n4 + 9 = 13 (this path does not work, backtrack)\n\nAlternative path:\n9 / 2 = 4.5 (this path does not work, backtrack)\n\nAlternative path:\n9 / 9 = 1 (left: 2 4 1)\n4 * 2 = 8 (left: 8 1)\n8 * 1 = 8 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 2 = 9 (left: 4 9)\n4 + 9 = 13 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 2 = 16 (left: 4 16)\n16 + 4 = 20 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 4 = 4.5 (this path does not work, backtrack)\n\nAlternative path:\n9 * 2 = 18 (left: 18 4 9)\n18 - 9 = 9 (left: 4 9)\n9 - 4 = 5 (this path does not work, backtrack)\n\nAlternative path:\n9 - 2 = 7 (left: 4 7 9)\n9 + 4 = 13 (left: 7 13)\n13 - 7 = 6 (this path does not work, backtrack)\n\nAlternative path:\n4 * 2 = 8 (left: 8 9 9)\n9 + 9 = 18 (left: 8 18)\n18 - 8 = 10 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 2 = 16 (left: 4 16)\n16 + 4 = 20 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 2 = 9 (left: 4 9)\n4 + 9 = 13 (this path does not work, backtrack)\n\nAlternative path:\n4 + 9 = 13 (left: 2 9 13)\n13 - 9 = 4 (left: 2 4)\n2 * 4 = 8 (this path does not work, backtrack)\n\nAlternative path:\n9 / 9 = 1 (left: 2 4 1)\n4 * 2 = 8 (left: 8 1)\n8 * 1 = 8 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 2 = 9 (left: 4 9)\n4 + 9 = 13 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 4 = 4.5 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 2 = 16 (left: 4 16)\n16 + 4 = 20 (this path does not work, backtrack)\n\nAlternative path:\n4 * 2 = 8 (left: 8 9 9)\n9 + 9 = 18 (left: 8 18)\n18 - 8 = 10 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 4 = 14 (left: 2 14)\n14 + 2 = 16 (this path does not work, backtrack)\n\nAlternative path:\n4 + 9 = 13 (left: 2 9 13)\n13 - 9 = 4 (left: 2 4)\n2 * 4 = 8 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 2 = 16 (left: 4 16)\n16 + 4 = 20 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 4 = 4.5 (this path does not work, backtrack)\n\nAlternative path:\n4 * 2 = 8 (left: 8 9 9)\n9 + 9 = 18 (left: 8 18)\n18 - 8 = 10 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 2 = 16 (left: 4 16)\n16 + 4 = 20 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 4 = 14 (left: 2 14)\n14 + 2 = 16 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 2 = 9 (left: 4 9)\n4 + 9 = 13 (this path does not work, backtrack)\n\nAlternative path:\n9 / 9 = 1 (left: 2 4 1)\n4 * 2 = 8 (left: 8 1)\n8 * 1 = 8 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 2 = 9 (left: 4 9)\n4 + 9 = 13 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 4 = 4.5 (this path does not work, backtrack)\n\nAlternative path:\n4 + 9 = 13 (left: 2 9 13)\n13 - 9 = 4 (left: 2 4)\n2 * 4 = 8 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 2 = 16 (left: 4 16)\n16 + 4 = 20 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 2 = 9 (left: 4 9)\n4 + 9 = 13 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 4 = 14 (left: 2 14)\n14 + 2 = 16 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 4 = 4.5 (this path does not work, backtrack)\n\nAlternative path:\n4 * 2 = 8 (left: 8 9 9)\n9 + 9 = 18 (left: 8 18)\n18 - 8 = 10 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 2 = 9 (left: 4 9)\n4 + 9 = 13 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 2 = 16 (left: 4 16)\n16 + 4 = 20 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 4 = 4.5 (this path does not work, backtrack)\n\nAlternative path:\n9 / 9 = 1 (left: 2 4 1)\n4 * 2 = 8 (left: 8 1)\n8 * 1 = 8 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 2 = 9 (left: 4 9)\n4 + 9 = 13 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 2 = 16 (left: 4 16)\n16 + 4 = 20 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 4 = 4.5 (this path does not work, backtrack)\n\nAlternative path:\n4 * 2 = 8 (left: 8 9 9)\n9 + 9 = 18 (left: 8 18)\n18 - 8 = 10 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 4 = 14 (left: 2 14)\n14 + 2 = 16 (this path does not work, backtrack)\n\nAlternative path:\n4 + 9 = 13 (left: 2 9 13)\n13 - 9 = 4 (left: 2 4)\n2 * 4 = 8 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 2 = 9 (left: 4 9)\n4 + 9 = 13 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 / 4 = 4.5 (this path does not work, backtrack)\n\nAlternative path:\n4 * 2 = 8 (left: 8 9 9)\n9 + 9 = 18 (left: 8 18)\n18 - 8 = 10 (this path does not work, backtrack)\n\nAlternative path:\n9 + 9 = 18 (left: 2 4 18)\n18 - 4 = 14 (left: 2 14)\n14 + 2 = 16 (this path does not work, backtrack)",
+            "Answer": "((9 + 9) - 4) + 2 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "738",
+            "Puzzles": "2 6 6 10",
+            "AMT (s)": "8.61",
+            "Solved rate": "94.10%",
+            "1-sigma Mean (s)": "9.05",
+            "1-sigma STD (s)": "3.64"
+        },
+        "response": {
+            "Steps": "2 + 6 = 8 (left: 6 8 10)\n6 + 8 = 14 (left: 10 14)\n14 - 10 = 4 (left: 4)\n4 * 6 = 24 (left: 24)",
+            "Answer": "(6 + (2 + 6 - 10)) * 6 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "739",
+            "Puzzles": "1 2 5 13",
+            "AMT (s)": "8.62",
+            "Solved rate": "94.30%",
+            "1-sigma Mean (s)": "9.16",
+            "1-sigma STD (s)": "3.68"
+        },
+        "response": {
+            "Steps": "13 - 5 = 8 (left: 1 2 8)\n8 + 2 = 10 (left: 1 10)\n10 * 1 = 10 (left: 10)\n10 + 13 = 23 (left: 23)\n23 + 1 = 24 (left: 24)",
+            "Answer": "((13 - 5) + 2) + 1 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "740",
+            "Puzzles": "6 8 9 13",
+            "AMT (s)": "8.62",
+            "Solved rate": "93.90%",
+            "1-sigma Mean (s)": "9.3",
+            "1-sigma STD (s)": "3.96"
+        },
+        "response": {
+            "Steps": "6 + 8 = 14 (left: 9 13 14)\n13 - 9 = 4 (left: 4 14)\n4 * 14 = 56 (left: 56)\n\nBacktrack...\n\n13 - 6 = 7 (left: 8 9 7)\n9 - 7 = 2 (left: 8 2)\n8 * 2 = 16 (left: 16)\n\nBacktrack...\n\n9 + 13 = 22 (left: 6 8 22)\n22 - 8 = 14 (left: 6 14)\n14 - 6 = 8 (left: 8)\n\nBacktrack...\n\n9 + 6 = 15 (left: 8 13 15)\n15 - 13 = 2 (left: 8 2)\n8 * 2 = 16 (left: 16)\n\nBacktrack...\n\n8 + 6 = 14 (left: 9 13 14)\n14 - 13 = 1 (left: 9 1)\n9 * 1 = 9 (left: 9)\n\nBacktrack...\n\nFinally, the correct path:\n\n9 + 6 = 15 (left: 8 13 15)\n15 - 13 = 2 (left: 8 2)\n8 * 2 = 16 (left: 16)\n\nBacktrack...\n\n13 + 6 = 19 (left: 8 9 19)\n19 - 9 = 10 (left: 8 10)\n10 - 8 = 2 (left: 2)\n\nBacktrack...\n\n8 + 9 = 17 (left: 6 13 17)\n17 - 13 = 4 (left: 6 4)\n6 * 4 = 24 (left: 24)",
+            "Answer": "(8 + 9 - 13) * 6 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "741",
+            "Puzzles": "2 9 11 11",
+            "AMT (s)": "8.63",
+            "Solved rate": "89.30%",
+            "1-sigma Mean (s)": "9.08",
+            "1-sigma STD (s)": "4.03"
+        },
+        "response": {
+            "Steps": "Step 1: 11 - 9 = 2 (left: 2 2 11)\nStep 2: 11 + 2 = 13 (left: 2 13)\nStep 3: 13 + 11 = 24 (left: 24)",
+            "Answer": "(11 - 9) + 11 + 2 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "742",
+            "Puzzles": "1 3 9 13",
+            "AMT (s)": "8.65",
+            "Solved rate": "93.70%",
+            "1-sigma Mean (s)": "9.25",
+            "1-sigma STD (s)": "4.13"
+        },
+        "response": {
+            "Steps": "**Steps:**\n1. 13 - 9 = 4 (left: 1 3 4)\n2. 4 * 3 = 12 (left: 1 12)\n3. 12 * 1 = 12 (left: 12)\n\n**Answer:** (13 - 9) * 3 * 1 = 12\n\n**Alternative Approach:**\n\n**Steps:**\n1. 13 - 9 = 4 (left: 1 3 4)\n2. 4 * 3 = 12 (left: 1 12)\n3. 12 + 12 = 24 (left: 24)\n\n**Answer:** (13 - 9) * 3 + (13 - 9) * 3 = 24",
+            "Answer": "(13 - 9) * 3 + (13 - 9) * 3 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "743",
+            "Puzzles": "2 2 8 10",
+            "AMT (s)": "8.65",
+            "Solved rate": "94.30%",
+            "1-sigma Mean (s)": "9.26",
+            "1-sigma STD (s)": "3.29"
+        },
+        "response": {
+            "Steps": "2 + 8 = 10 (left: 2 10 10)\n2 + 10 = 12 (left: 10 12)\n12 + 10 = 22 (left: 22)",
+            "Answer": "(2 + 8) + (2 + 10) + 10 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "744",
+            "Puzzles": "2 4 7 11",
+            "AMT (s)": "8.66",
+            "Solved rate": "92.50%",
+            "1-sigma Mean (s)": "8.98",
+            "1-sigma STD (s)": "3.79"
+        },
+        "response": {
+            "Steps": "Steps:\n1. 11 - 7 = 4 (left: 2 4 4)\n2. 4 + 4 = 8 (left: 2 8)\n3. 8 * 2 = 16 (left: 16)\n\nBacktrack from here as 16 is not 24.\n\nAlternative Steps:\n1. 11 - 7 = 4 (left: 2 4 4)\n2. 4 * 4 = 16 (left: 2 16)\n3. Attempt 16 + 2 = 18 (left: 18)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 7 = 4 (left: 2 4 4)\n2. 4 * 2 = 8 (left: 8 4)\n3. 8 + 4 = 12 (left: 12)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 7 = 4 (left: 2 4 4)\n2. 4 * 2 = 8 (left: 8 4)\n3. 8 * 4 = 32 (left: 32)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 7 * 2 = 14 (left: 4 11 14)\n2. 11 + 14 = 25 (left: 4 25)\n3. 25 - 1 = 24 (left: 24)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 7 - 4 = 3 (left: 2 3 11)\n2. 11 + 3 = 14 (left: 2 14)\n3. 2 * 12 = 24 (left: 24)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 + 2 = 9 (left: 9)\n3. 9 + 9 = 18 (left: 18)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 7 = 4 (left: 2 4 4)\n2. 4 + 4 = 8 (left: 2 8)\n3. 8 * 2 = 16 (left: 16)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 + 4 = 15 (left: 2 7)\n2. 15 - 7 = 8 (left: 8)\n3. 8 + 2 = 10 (left: 10)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 - 2 = 5 (left: 5)\n3. 5 + 5 = 10 (left: 10)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 + 2 = 9 (left: 9)\n3. 9 + 9 = 18 (left: 18)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 + 2 = 9 (left: 9)\n3. 9 + 9 = 18 (left: 18)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 + 4 = 15 (left: 2 7)\n2. 15 - 7 = 8 (left: 8)\n3. 8 * 2 = 16 (left: 16)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 + 2 = 9 (left: 9)\n3. 9 + 9 = 18 (left: 18)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 + 2 = 9 (left: 9)\n3. 9 + 9 = 18 (left: 18)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 + 2 = 9 (left: 9)\n3. 9 + 9 = 18 (left: 18)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 + 2 = 9 (left: 9)\n3. 9 + 9 = 18 (left: 18)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 + 2 = 9 (left: 9)\n3. 9 + 9 = 18 (left: 18)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 + 2 = 9 (left: 9)\n3. 9 + 9 = 18 (left: 18)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 + 2 = 9 (left: 9)\n3. 9 + 9 = 18 (left: 18)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 + 2 = 9 (left: 9)\n3. 9 + 9 = 18 (left: 18)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 + 2 = 9 (left: 9)\n3. 9 + 9 = 18 (left: 18)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 + 2 = 9 (left: 9)\n3. 9 + 9 = 18 (left: 18)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 + 2 = 9 (left: 9)\n3. 9 + 9 = 18 (left: 18)\n\nBacktrack again.\n\nSuccessful Steps:\n1. 11 - 4 = 7 (left: 2 7)\n2. 7 + 2 = 9 (left: 9)\n3. 9 + 9 = 18 (left: 18)\n\nBacktrack again.",
+            "Answer": "Answer: (11 - 7) * (2 + 9) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "745",
+            "Puzzles": "2 6 7 8",
+            "AMT (s)": "8.66",
+            "Solved rate": "89.60%",
+            "1-sigma Mean (s)": "8.97",
+            "1-sigma STD (s)": "3.88"
+        },
+        "response": {
+            "Steps": "8 - 2 = 6 (left: 6 7 6)\n6 + 6 = 12 (left: 7 12)\n12 + 12 = 24 (left: 24)",
+            "Answer": "((8 - 2) + (6 + 6)) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "746",
+            "Puzzles": "1 3 4 7",
+            "AMT (s)": "8.67",
+            "Solved rate": "95%",
+            "1-sigma Mean (s)": "9.48",
+            "1-sigma STD (s)": "3.83"
+        },
+        "response": {
+            "Steps": "1 + 3 = 4 (left: 4 4 7)\n4 * 4 = 16 (left: 7 16)\n16 + 7 = 23 (left: 23)",
+            "Answer": "Unfortunately, this path doesn't reach 24. Let's try another path:\n\nSteps:\n1 + 7 = 8 (left: 3 4 8)\n4 * 8 = 32 (left: 3 32)\n32 - 8 = 24 (left: 24)\n\nAnswer: (1 + 7) * (4 * 8) / 8 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "747",
+            "Puzzles": "4 8 9 11",
+            "AMT (s)": "8.68",
+            "Solved rate": "93%",
+            "1-sigma Mean (s)": "9.16",
+            "1-sigma STD (s)": "3.89"
+        },
+        "response": {
+            "Steps": "4 + 8 = 12 (left: 9 11 12)\n11 - 9 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)",
+            "Answer": "(11 - 9) * (4 + 8) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "748",
+            "Puzzles": "6 6 8 10",
+            "AMT (s)": "8.68",
+            "Solved rate": "90.10%",
+            "1-sigma Mean (s)": "8.9",
+            "1-sigma STD (s)": "3.96"
+        },
+        "response": {
+            "Steps": "6 + 6 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)",
+            "Answer": "(6 + 6) * (10 - 8) = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "749",
+            "Puzzles": "5 5 9 10",
+            "AMT (s)": "8.69",
+            "Solved rate": "86.90%",
+            "1-sigma Mean (s)": "9.06",
+            "1-sigma STD (s)": "4.3"
+        },
+        "response": {
+            "Steps": "5 + 5 = 10 (left: 9, 10, 10)\n9 + 10 = 19 (left: 10, 19)\n19 + 5 = 24 (left: 24)",
+            "Answer": "(5 + 5) + (9 + 10) - 10 = 24"
+        }
+    },
+    {
+        "original_puzzle": {
+            "Rank": "750",
+            "Puzzles": "2 3 7 11",
+            "AMT (s)": "8.7",
+            "Solved rate": "91.70%",
+            "1-sigma Mean (s)": "9.09",
+            "1-sigma STD (s)": "4.21"
+        },
+        "response": {
+            "Steps": "2 + 3 = 5 (left: 5 7 11)\n7 - 5 = 2 (left: 2 11)\n2 * 11 = 22 (left: 22)\n11 + 2 = 13 (left: 13)\n13 + 7 = 20 (left: 20)\n20 + 4 = 24 (left: 24)",
+            "Answer": "((2 + 3) * 11) + (7 - 5) = 24"
+        }
+    }
+]
