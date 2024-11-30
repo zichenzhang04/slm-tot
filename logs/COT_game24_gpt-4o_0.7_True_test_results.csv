@@ -1,0 +1,5 @@
+Rank,Puzzle,Info,Line,Status,Statement
+901,1 1 4 6,"{'Numbers used are in the left of the previous step': False, 'The left of the current step contains the numbers not used': False, 'The output of the expression is correct': False, 'Last step outputs 24': False, 'Failure Step Number': '1', 'Failed Step': ''}",1,True,fundamental error
+902,1 1 11 11,"{'Numbers used are in the left of the previous step': True, 'The left of the current step contains the numbers not used': True, 'The output of the expression is correct': True, 'Last step outputs 24': True, 'Failure Step Number': 'Correct', 'Failed Step': ''}",Correct,False,OK
+903,1 1 3 8,"{'Numbers used are in the left of the previous step': True, 'The left of the current step contains the numbers not used': True, 'The output of the expression is correct': False, 'Last step outputs 24': None, 'Failure Step Number': '3', 'Failed Step': '16 + 3 = 24 (left: 24)'}",3,True,"Note: Conditions with a check result of 'None' were not evaluated because of an intermediate failure.
+Alternatively, the final answer may not have been possible to calculate according to the model."

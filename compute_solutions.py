@@ -67,12 +67,12 @@ def add_to_json(filename):
         for puzzle in data:
             puzzle["original_puzzle"]["solution"] = find_str_solution(puzzle["original_puzzle"]["Puzzles"])
     
-    output_filepath = "logs/answers_" + filename
+    output_filepath = "logs/COT/answers_COT_game24_gpt-4o_0.7_False.json"
     with open(output_filepath, 'w') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
-    add_to_json("game24_gpt-4_0.7_False.json")  # Change filename here.
+    add_to_json("COT/COT_game24_gpt-4o_0.7_False.json")  # Change filename here.
         
     
 
