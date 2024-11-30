@@ -6,4 +6,4 @@ python-dotenv==1.0.1
 sympy==1.13.1
 torch==2.5.1
 transformers==4.46.3
-tree-of-thoughts-llm==0.1.0
+optuna==3.3.0
