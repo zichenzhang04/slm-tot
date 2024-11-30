@@ -24,6 +24,7 @@ def read_csv(file_path):
 def generate_prompt(puzzle):
     
     cot_prompt = f'''Use numbers and basic arithmetic operations (+ - * /) to obtain 24. Each step, you are only allowed to choose two of the remaining numbers to obtain a new number.
+        Adhere to the format in the examples below to output your steps and answer.
         Input: 4 4 6 8
         Steps:
         4 + 8 = 12 (left: 4 6 12)
@@ -71,7 +72,7 @@ def prompt_gpt(puzzle, backend, temperature):
 
 
 def generate_log_filename(args):
-    filename = f"./logs/{args.task}_{args.backend}_{args.temperature}_{args.test_mode}.json"
+    filename = f"./logs/COT/COT_{args.task}_{args.backend}_{args.temperature}_{args.test_mode}.json"
     return filename
 
 
@@ -85,7 +86,11 @@ def run(args):
     count = 0
     start_time = time.time()
     print("Current Time:", start_time)
-    for puzzle in puzzles[901:1001]:
+    if args.test_mode:
+        subsetpuzzles = puzzles
+    else:
+        subsetpuzzles = puzzles[901:1001]
+    for puzzle in subsetpuzzles:
 
         puzzle_text = puzzle['Puzzles']
         print(count)
@@ -102,7 +107,7 @@ def run(args):
     print("Time taken:", finish_time - start_time)
     
 
-    os.makedirs('./logs', exist_ok=True)
+    os.makedirs('./logs/COT', exist_ok=True)
     # Generate and save the log file
     log_filename = generate_log_filename(args)
     with open(log_filename, 'w') as f:
@@ -112,7 +117,7 @@ def run(args):
 def parse_args():
     args = argparse.ArgumentParser()
     args.add_argument('--backend', type=str,
-                      choices=['gpt-4o', 'gpt-4o-mini'], default='gpt-4')
+                      choices=['gpt-4o', 'gpt-4o-mini'], default='gpt-4o')
     args.add_argument('--temperature', type=float, default=0.7)
     args.add_argument('--task', type=str,
                       choices=['game24', 'text', 'crosswords'], default="game24")
