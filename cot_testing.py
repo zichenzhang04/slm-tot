@@ -208,7 +208,7 @@ def generate_plots_one_step_tot():
         fig,ax = plt.subplots()
         ax.bar(categories, values)
         ax.set_ylabel("Fraction")
-        extension = "(One-Step ToT)" if data==gpt4ocsv else ""
+        extension = "(CoT)" if data==gpt4ocsv else ""
         ax.set_title("Fraction of samples failed at each step " + extension)
         plt.savefig("plots/cot_game24.png")
     return
