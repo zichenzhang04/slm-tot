@@ -19,7 +19,7 @@ print("Pad token ID:", tokenizer.pad_token_id)
 if tokenizer.pad_token is None:
     tokenizer.add_special_tokens({'pad_token': '[PAD]'})
     model.resize_token_embeddings(len(tokenizer))
-
+model.gradient_checkpointing_enable()
 # Load the dataset
 """
 Assume new finetune.csv dataset in following format:
@@ -177,9 +177,6 @@ def objective(trial):
         eval_dataset=tokenized_eval_dataset,
         # data_collator=data_collator,
     )
-
-    #clear cache
-    torch.cuda.empty_cache()
 
     # Train the model
     trainer.train()
