@@ -1,7 +1,7 @@
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, Trainer, TrainingArguments, DataCollatorForSeq2Seq
 from datasets import load_dataset
-from one_step_tot import generate_prompt
+# from one_step_tot import generate_prompt
 from optuna import create_study
 # from optuna.integration import TransformersTrainerCallback
 import optuna
@@ -33,6 +33,65 @@ dataset = load_dataset("csv", data_files=dataset_path)
 train_test_split = dataset["train"].train_test_split(test_size=0.1)
 train_dataset = train_test_split["train"]
 eval_dataset = train_test_split["test"]
+
+
+def generate_prompt(puzzle):
+    """One Step Tree-of-Thoughts prompting."""
+    # 5 examples
+    in_context_demo = '''
+        Input: 4 4 6 8
+        Steps:
+        4 + 8 = 12 (left: 4 6 12)
+        6 - 4 = 2 (left: 2 12)
+        2 * 12 = 24 (left: 24)
+        Answer: (6 - 4) * (4 + 8) = 24\n
+        Input: 2 9 10 12
+        Steps:
+        12 * 2 = 24 (left: 9 10 24)
+        10 - 9 = 1 (left: 1 24)
+        24 * 1 = 24 (left: 24)
+        Answer: (12 * 2) * (10 - 9) = 24\n
+        Input: 4 9 10 13
+        Steps:
+        13 - 10 = 3 (left: 3 4 9)
+        9 - 3 = 6 (left: 4 6)
+        4 * 6 = 24 (left: 24)
+        Answer: 4 * (9 - (13 - 10)) = 24\n
+        Input: 1 4 8 8
+        Steps:
+        8 / 4 = 2 (left: 1 2 8)
+        1 + 2 = 3 (left: 3 8)
+        3 * 8 = 24 (left: 24)
+        Answer: (1 + 8 / 4) * 8 = 24\n
+        Input: 5 5 5 9
+        Steps:
+        5 + 5 = 10 (left: 5 9 10)
+        10 + 5 = 15 (left: 9 15)
+        15 + 9 = 24 (left: 24)
+        Answer: ((5 + 5) + 5) + 9 = 24\n
+    '''
+
+    system_prompt = (
+        "Use numbers and basic arithmetic operations (+ - * /) to obtain 24. Each step, you are only allowed to choose two of the remaining numbers to obtain a new number.\n"
+        "Step 1: Start by considering possible operations for each pair of numbers.\n"
+        "Step 2: Try a path (a pair of two numbers), see if the remaining numbers can possibly reach the goal 24. If not, backtrack and attempt another.\n"
+        "Step 3: Branch out to try different orders of operations and combinations, evaluating each outcome.\n"
+        "Step 4: If one path doesn't lead to a solution, backtrack and try alternative operations.\n"
+    )
+
+    prompt = (
+        f"{system_prompt}"
+        f"{in_context_demo}"
+        f"Now, solve the following puzzle:\n{puzzle}\n"
+        "Output in the same format as this example including three steps and final answer:\n"
+        "Steps:\n"
+        "5 + 5 = 10 (left: 5 9 10)\n"
+        "10 + 5 = 15 (left: 9 15)\n"
+        "15 + 9 = 24 (left: 24)\n"
+        "Answer: ((5 + 5) + 5) + 9 = 24"
+    )
+    return prompt
+
 
 def preprocess_function(examples):
     """Tokenize the inputs and set the answer as the target label."""
