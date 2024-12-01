@@ -51,13 +51,13 @@ tokenized_eval_dataset = eval_dataset.map(
     preprocess_function, batched=True, remove_columns=eval_dataset.column_names
 )
 
-data_collator = DataCollatorForSeq2Seq(
-    tokenizer=tokenizer,
-    model=model,  # Use the model to ensure compatibility
-    padding=True,  # Dynamically pad inputs and labels
-    max_length=1024,  # Truncate if needed
-    return_tensors="pt"  # Return PyTorch tensors
-)
+# data_collator = DataCollatorForSeq2Seq(
+#     tokenizer=tokenizer,
+#     model=model,  # Use the model to ensure compatibility
+#     padding=True,  # Dynamically pad inputs and labels
+#     max_length=1024,  # Truncate if needed
+#     return_tensors="pt"  # Return PyTorch tensors
+# )
 
 # Define the objective function for hyperparameter tuning
 def objective(trial):
@@ -94,7 +94,7 @@ def objective(trial):
         args=training_args,
         train_dataset=tokenized_train_dataset,
         eval_dataset=tokenized_eval_dataset,
-        data_collator=data_collator,
+        # data_collator=data_collator,
     )
 
     # Train the model
