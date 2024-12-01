@@ -11,7 +11,7 @@ model_name = "HuggingFaceTB/SmolLM-360M"
 save_path = "./smollm_finetuned"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False)
-model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
+model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto", torch_dtype=torch.bfloat16)
 
 # Check and add pad token
 print("Pad token:", tokenizer.pad_token)
