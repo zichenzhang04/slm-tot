@@ -109,13 +109,19 @@ class Gameof24OutputTester():
         this_ans = ans.replace("Answer:", "").replace("=","==").strip() + " == 24"
         this_ans = this_ans.replace("###", "")
         this_ans = this_ans.replace("Final", "")
+        # 1. evaluate the expression to chck correctness.
         try:
             expr_result = eval(this_ans)
             if hasattr(expr_result, "__iter__") and len(expr_result)==1:
                 expr_result = expr_result.pop()
         except:
             expr_result = False
-        return expr_result
+        # 2. Expression can only use each num once, and cannot use extraneous values
+        num_check = ans.replace("Answer:","").strip()
+        for ch in list("+-*/()[]=")+["24"]:
+            num_check = num_check.replace(ch,"")
+        nums_in_expr = sorted(num_check.split(), key=lambda val: int(val))
+        return expr_result and (nums_in_expr == sorted(self.puzzle, key=lambda puz: int(puz)))
     
     # main procedure - iterate through all lines of response
     def eval_response(self):
