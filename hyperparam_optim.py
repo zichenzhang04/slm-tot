@@ -178,6 +178,9 @@ def objective(trial):
         # data_collator=data_collator,
     )
 
+    #clear cache
+    torch.cuda.empty_cache()
+
     # Train the model
     trainer.train()
 
