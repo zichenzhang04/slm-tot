@@ -12,6 +12,9 @@ save_path = "./smollm_finetuned"
 tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False)
 model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
 
+print("Pad token:", tokenizer.pad_token)
+print("Pad token ID:", tokenizer.pad_token_id)
+
 # Load the dataset
 """
 Assume new finetune.csv dataset in following format:
@@ -98,7 +101,7 @@ print("Best hyperparameters:", study.best_params)
 # Save the fine-tuned model with the best parameters
 best_params = study.best_params
 training_args = TrainingArguments(
-    output_dir="./orca_finetuned_best",
+    output_dir="./SmolLM_360M_finetuned_best",
     per_device_train_batch_size=best_params["batch_size"],
     learning_rate=best_params["learning_rate"],
     weight_decay=best_params["weight_decay"],
