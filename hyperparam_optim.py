@@ -15,9 +15,9 @@ model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
 # Check and add pad token
 print("Pad token:", tokenizer.pad_token)
 print("Pad token ID:", tokenizer.pad_token_id)
-if tokenizer.pad_token is None:
-    tokenizer.add_special_tokens({'pad_token': '[PAD]'})
-    model.resize_token_embeddings(len(tokenizer))
+# if tokenizer.pad_token is None:
+#     tokenizer.add_special_tokens({'pad_token': '[PAD]'})
+#     model.resize_token_embeddings(len(tokenizer))
 
 # Load the dataset
 """
@@ -40,8 +40,28 @@ def preprocess_function(examples):
         for question in examples["Puzzle"]
     ]
     outputs = [f"{answer}<|im_end|>" for answer in examples["Response"]]
-    model_inputs = tokenizer(inputs, text_target=outputs,
-                             max_length=1024, truncation=True)
+
+    # Tokenize inputs and outputs with consistent padding and truncation
+    model_inputs = tokenizer(
+        inputs,
+        max_length=1024,
+        padding="max_length",  # Use "max_length" for consistent tensor size
+        truncation=True
+    )
+    labels = tokenizer(
+        outputs,
+        max_length=1024,
+        padding="max_length",  # Use "max_length" for consistent tensor size
+        truncation=True
+    )["input_ids"]
+
+    # Replace padding token ids in labels with -100 to ignore in loss computation
+    labels = [
+        [(label if label != tokenizer.pad_token_id else -100) for label in seq]
+        for seq in labels
+    ]
+
+    model_inputs["labels"] = labels
     return model_inputs
 
 tokenized_train_dataset = train_dataset.map(
