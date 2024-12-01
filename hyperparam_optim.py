@@ -41,7 +41,7 @@ def preprocess_function(examples):
     ]
     outputs = [f"{answer}<|im_end|>" for answer in examples["Response"]]
     model_inputs = tokenizer(inputs, text_target=outputs,
-                             max_length=1024, truncation=True)
+                             max_length=1024, truncation=True, padding=True)
     return model_inputs
 
 tokenized_train_dataset = train_dataset.map(
@@ -61,7 +61,7 @@ def objective(trial):
 
     # Define training arguments
     training_args = TrainingArguments(
-        output_dir="./orca_finetuned",
+        output_dir="./smollm_finetune_test",
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=batch_size,
         gradient_accumulation_steps=8,
