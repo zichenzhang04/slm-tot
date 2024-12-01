@@ -66,7 +66,8 @@ if __name__ == "__main__":
         writer2 = csv.DictWriter(mf, schema)    
         writer2.writeheader()
         writer2.writerows(manual)        
-    
+    # print accuracy
+    print(len(correct)/1362)
 
 '''p = "4 + 4 = 8 (left: 5 8 8)\n8 + 8 = 16 (left: 5 16)\n16 - 5 = 11 (left: 11)\n\nBacktrack:\n\n4 * 5 = 20 (left: 4 8 20)\n20 - 8 = 12 (left: 4 12)\n4 + 12 = 16 (left: 16)\n\nBacktrack:\n\n5 - 4 = 1 (left: 4 8 1)\n1 + 4 = 5 (left: 8 5)\n8 * 5 = 40 (left: 40)\n\nBacktrack:\n\nTry a different set of operations:\n\n4 * 5 = 20 (left: 4 8 20)\n20 - 4 = 16 (left: 8 16)\n\nBacktrack:\n\n5 + 8 = 13 (left: 4 4 13)\n13 + 4 = 17 (left: 4 17)\n17 - 4 = 13 (left: 13)\n\nBacktrack:\n\nTry another path:\n\n5 + 4 = 9 (left: 4 8 9)\n9 - 4 = 5 (left: 8 5)\n8 * 5 = 40 (left: 40)\n\nBacktrack:\n\n4 * 8 = 32 (left: 4 5 32)\n32 - 5 = 27 (left: 4 27)\n27 - 4 = 23 (left: 23)\n\nFinally, try:\n\n5 - 4 = 1 (left: 4 8 1)\n1 + 8 = 9 (left: 4 9)\n4 * 9 = 36 (left: 36)\n\nBacktrack:\n\nTry a new path:\n\n8 - 4 = 4 (left: 4 5 4)\n4 + 5 = 9 (left: 4 9)\n9 * 4 = 36 (left: 36)\n\nBacktrack:\n\n4 + 8 = 12 (left: 4 5 12)\n12 - 4 = 8 (left: 5 8)\n5 * 8 = 40 (left: 40)\n\nFinally, solve successfully:\n\n4 + 4 = 8 (left: 5 8 8)\n8 + 5 = 13 (left: 8 13)\n13 + 8 = 21 (left: 21)\n\nBacktrack:\n\n5 + 4 = 9 (left: 4 8 9)\n9 + 4 = 13 (left: 8 13)\n13 + 8 = 21 (left: 21)\n\nTry:\n\n4 + 4 = 8 (left: 5 8 8)\n8 - 5 = 3 (left: 8 3)\n3 * 8 = 24 (left: 24)\n\nSolution Found!"
 l = re.split('\n+',p)

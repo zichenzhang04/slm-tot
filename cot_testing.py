@@ -185,7 +185,7 @@ def produce_output_gpt_4o():
     return True
 
 
-def generate_plots_one_step_tot():
+def generate_plots_cot():
     matplotlib.use('Agg')
     #gpt4csv = 'logs/COT/answers_game24_gpt-4_0.7_False_test_results.csv'
     gpt4ocsv = 'logs/COT/COT_game24_gpt-4o_0.7_False_test_results.csv'
@@ -240,4 +240,4 @@ if __name__ == "__main__":
         
     
     # generate the plots as in Figure 3(a)
-    generate_plots_one_step_tot()
+    generate_plots_cot()
