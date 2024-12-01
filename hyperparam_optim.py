@@ -1,5 +1,5 @@
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer, Trainer, TrainingArguments
+from transformers import AutoModelForCausalLM, AutoTokenizer, Trainer, TrainingArguments, DataCollatorForSeq2Seq
 from datasets import load_dataset
 from optuna import create_study
 # from optuna.integration import TransformersTrainerCallback
@@ -14,10 +14,11 @@ model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
 
 # Check and add pad token
 print("Pad token:", tokenizer.pad_token)
-print("eos token:", tokenizer.eos_token)
 print("Pad token ID:", tokenizer.pad_token_id)
 if tokenizer.pad_token is None:
-    tokenizer.pad_token = tokenizer.eos_token
+    tokenizer.add_special_tokens({'pad_token': '[PAD]'})
+    model.resize_token_embeddings(len(tokenizer))
+
 # Load the dataset
 """
 Assume new finetune.csv dataset in following format:
@@ -40,7 +41,7 @@ def preprocess_function(examples):
     ]
     outputs = [f"{answer}<|im_end|>" for answer in examples["Response"]]
     model_inputs = tokenizer(inputs, text_target=outputs,
-                             max_length=1024, truncation=True, padding=True)
+                             max_length=1024, truncation=True)
     return model_inputs
 
 tokenized_train_dataset = train_dataset.map(
@@ -48,6 +49,14 @@ tokenized_train_dataset = train_dataset.map(
 )
 tokenized_eval_dataset = eval_dataset.map(
     preprocess_function, batched=True, remove_columns=eval_dataset.column_names
+)
+
+data_collator = DataCollatorForSeq2Seq(
+    tokenizer=tokenizer,
+    model=model,  # Use the model to ensure compatibility
+    padding=True,  # Dynamically pad inputs and labels
+    max_length=1024,  # Truncate if needed
+    return_tensors="pt"  # Return PyTorch tensors
 )
 
 # Define the objective function for hyperparameter tuning
@@ -85,6 +94,7 @@ def objective(trial):
         args=training_args,
         train_dataset=tokenized_train_dataset,
         eval_dataset=tokenized_eval_dataset,
+        data_collator=data_collator,
     )
 
     # Train the model

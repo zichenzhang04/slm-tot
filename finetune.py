@@ -35,9 +35,9 @@ def preprocess_function(examples):
     """Tokenize the inputs and set the answer as the target label."""
     inputs = [
         f"<|im_start|>user\n{question}<|im_end|>\n<|im_start|>assistant"
-        for question in examples["question"]
+        for question in examples["Puzzle"]
     ]
-    outputs = [f"{answer}<|im_end|>" for answer in examples["answer"]]
+    outputs = [f"{answer}<|im_end|>" for answer in examples["Response"]]
     model_inputs = tokenizer(inputs, text_target=outputs,
                              max_length=1024, truncation=True)
     return model_inputs

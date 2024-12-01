@@ -2,4 +2,5 @@ import pandas as pd
 
 
 df = pd.read_csv('datasets/finetune.csv')
-print(df['Response'][0])
+df = df.drop(columns=['Rank'])
+df.to_csv('datasets/finetune.csv', index=False)
