@@ -12,8 +12,12 @@ save_path = "./smollm_finetuned"
 tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False)
 model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
 
+# Check and add pad token
 print("Pad token:", tokenizer.pad_token)
 print("Pad token ID:", tokenizer.pad_token_id)
+if tokenizer.pad_token is None:
+    tokenizer.add_special_tokens({'pad_token': '[PAD]'})
+    model.resize_token_embeddings(len(tokenizer))
 
 # Load the dataset
 """
