@@ -1,6 +1,7 @@
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, Trainer, TrainingArguments, DataCollatorForSeq2Seq
 from datasets import load_dataset
+from one_step_tot import generate_prompt
 from optuna import create_study
 # from optuna.integration import TransformersTrainerCallback
 import optuna
@@ -35,8 +36,9 @@ eval_dataset = train_test_split["test"]
 
 def preprocess_function(examples):
     """Tokenize the inputs and set the answer as the target label."""
+
     inputs = [
-        f"<|im_start|>user\n{question}<|im_end|>\n<|im_start|>assistant"
+        f"<|im_start|>user\n{generate_prompt(question)}<|im_end|>\n<|im_start|>assistant"
         for question in examples["Puzzle"]
     ]
     outputs = [f"{answer}<|im_end|>" for answer in examples["Response"]]
