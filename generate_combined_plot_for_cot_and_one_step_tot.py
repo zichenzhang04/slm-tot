@@ -36,7 +36,6 @@ def generate_combined_plot():
     ax.set_title("Fraction of samples failed at each step for CoT and One-Step ToT")
     ax.set_xticks(x+width, categories)
     ax.legend(loc="upper right", ncols=2)
-    ax.set_ylim(0, 1)
     plt.savefig("plots/failed_sampled_cot_and_one_step_tot")
     return
 
